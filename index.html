@@ -819,6 +819,22 @@
       <h2>Let's connect</h2>
       <p class="lead">Reach out directly through any channel below — I typically respond fastest on WhatsApp.</p>
 
+            <div class="availability-clock">
+        <div class="clock-grid">
+          <div class="clock-card">
+            <span class="clock-label">Local Time (PHT)</span>
+            <div id="pht-clock" class="time-display">--:--:-- --</div>
+            <span class="hours-label">Operational: 11:00 AM - 05:00 PM</span>
+          </div>
+          <div class="clock-card">
+            <span class="clock-label">Target Time (US EST)</span>
+            <div id="est-clock" class="time-display">--:--:-- --</div>
+            <span class="hours-label">Target: 12:00 PM - 10:00 PM</span>
+          </div>
+        </div>
+        <div id="status-indicator" class="status-banner">Checking operational status...</div>
+      </div>
+
       <div class="contact-links">
         <a class="contact-link" href="https://wa.me/639485781238" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.4.5.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.2-.2-.5-.3z" fill="#00FF87"/><path d="M12 2C6.5 2 2 6.4 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.4 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14.9 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2z" fill="#00FF87"/></svg>
@@ -1029,6 +1045,58 @@
     <p>&copy; 2026 Joebert Ganay</p>
   </div>
 </footer>
+<script>
+function updateWorldClocks() {
+  const now = new Date();
+
+  // 1. Time Zone Formatting Configuration
+  const optionsPHT = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+  const optionsEST = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+
+  // 2. Format and Extract Dynamic Strings
+  const timePHTStr = new Intl.DateTimeFormat('en-US', optionsPHT).format(now);
+  const timeESTStr = new Intl.DateTimeFormat('en-US', optionsEST).format(now);
+
+  // 3. Update HTML Clock Layout Values
+  const phtEl = document.getElementById('pht-clock');
+  const estEl = document.getElementById('est-clock');
+  
+  if (phtEl) phtEl.textContent = timePHTStr;
+  if (estEl) estEl.textContent = timeESTStr;
+
+  // 4. Calculate Operational Shift Rules (11:00 AM - 5:00 PM PHT)
+  const formatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Manila',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false
+  });
+  
+  const parts = formatter.formatToParts(now);
+  const hourPHT = parseInt(parts.find(p => p.type === 'hour').value, 10);
+  const minutePHT = parseInt(parts.find(p => p.type === 'minute').value, 10);
+  
+  const statusEl = document.getElementById('status-indicator');
+  if (statusEl) {
+    // Current time conversion checks if you are within shift windows
+    const totalMinutesPHT = (hourPHT * 60) + minutePHT;
+    const startShift = 11 * 60; // 11:00 AM
+    const endShift = 17 * 60;   // 05:00 PM
+
+    if (totalMinutesPHT >= startShift && totalMinutesPHT < endShift) {
+      statusEl.textContent = "🟢 Currently Online & Available for Shifts";
+      statusEl.className = "status-banner online";
+    } else {
+      statusEl.textContent = "⚪ Offline | Executing Background Automated Tasks";
+      statusEl.className = "status-banner offline";
+    }
+  }
+}
+
+// Initial cycle execution and setup 1-second refresh ticker loop
+updateWorldClocks();
+setInterval(updateWorldClocks, 1000);
+</script>
 
 </body>
 </html>
