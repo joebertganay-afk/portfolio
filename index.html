@@ -337,6 +337,163 @@
     padding: 32px 0 48px;
   }
 
+  /* ==========================================================================
+   AVAILABILITY CLOCK & PROOF OF WORK STYLES
+   ========================================================================= */
+.availability-clock {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+.clock-grid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.clock-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.time-display {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--green);
+  margin: 8px 0;
+  font-family: monospace;
+}
+.clock-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; }
+.hours-label { font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 4px; }
+
+.status-banner {
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.status-banner.online { background: rgba(0, 255, 135, 0.1); color: var(--green); border: 1px solid rgba(0, 255, 135, 0.2); }
+.status-banner.offline { background: rgba(255, 255, 255, 0.03); color: var(--text-muted); border: 1px solid var(--border); }
+
+.gallery-section {
+  padding: 80px 0;
+  background: transparent;
+}
+.gallery-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.gallery-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.gallery-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.gallery-lead {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.gallery-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--green);
+  box-shadow: 0 8px 24px rgba(0, 255, 135, 0.05);
+}
+.card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+.gallery-card h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: left;
+}
+.gallery-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.tech-tags span {
+  background: rgba(0, 255, 135, 0.03);
+  color: var(--green);
+  border: 1px solid rgba(0, 255, 135, 0.12);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.card-highlight {
+  background: rgba(255, 255, 255, 0.01);
+  border-left: 3px solid var(--green);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 0 6px 6px 0;
+  margin-top: auto;
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .clock-grid { flex-direction: column; }
+}
+
+
   footer .foot-row {
     display: flex;
     justify-content: space-between;
@@ -812,6 +969,65 @@
 
   </div>
 </main>
+<!-- START OF PROOF OF WORK GALLERY -->
+<section id="portfolio-gallery" class="gallery-section">
+  <div class="gallery-container">
+    <div class="gallery-header">
+      <h2>Proof of Work</h2>
+      <p class="gallery-lead">Real-world operational systems, workflows, and performance records from 10+ years of execution.</p>
+    </div>
+
+    <div class="gallery-grid">
+      
+      <!-- Card 1: Lead Acquisition -->
+      <div class="gallery-card">
+        <div class="card-badge">Lead Acquisition</div>
+        <div class="card-content">
+          <h3>RE Skip Tracing & Cold Calling Engine</h3>
+          <p>Built end-to-end off-market sourcing pipelines. Managed data cleansing, skip tracing market lists, and executing high-volume outbound dialer strategies.</p>
+          <div class="tech-tags">
+            <span>Skip Tracing</span>
+            <span>Cold Calling</span>
+            <span>Dialers</span>
+          </div>
+          <div class="card-highlight">🏆 Named Top Trainee for RE Cold Calling (ACS VA)</div>
+        </div>
+      </div>
+
+      <!-- Card 2: CRM & Workflow Automation -->
+      <div class="gallery-card">
+        <div class="card-badge">Automations</div>
+        <div class="card-content">
+          <h3>GoHighLevel Automated Campaigns</h3>
+          <p>Configured client management pipelines, triggered SMS sequence follow-ups, and automated cold email outreach workflows to ensure zero lead dropped.</p>
+          <div class="tech-tags">
+            <span>GoHighLevel</span>
+            <span>CRM Workflows</span>
+            <span>Zoho / Zendesk</span>
+          </div>
+          <div class="card-highlight">🎓 GoHighLevel Mastery Certified (Excelerate Digital)</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Enterprise Tech Support -->
+      <div class="gallery-card">
+        <div class="card-badge">Operations Support</div>
+        <div class="card-content">
+          <h3>Technical Support Escalation System</h3>
+          <p>Managed full troubleshooting cycles for hardware setups, network configurations, and ticketing operations. Coordinated field engineers to eliminate downtime.</p>
+          <div class="tech-tags">
+            <span>Zendesk Ticketing</span>
+            <span>Network Failures</span>
+            <span>Operations</span>
+          </div>
+          <div class="card-highlight">⏱️ 10+ Years Customer Service & Support Background</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- END OF PROOF OF WORK GALLERY -->
 
 <section class="contact-panel">
   <div class="shell">
