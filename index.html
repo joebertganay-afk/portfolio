@@ -1398,24 +1398,33 @@
   </div>
 </footer>
 <script>
-function updateWorldClocks() {
+
+  function updateWorldClocks() {
     const now = new Date();
 
-    // 1. Time Zone Formatting Configuration
+    // 1. Time Zone Configuration Strings
     const optionsPHT = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
     const optionsEST = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const optionsUK = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const optionsAustria = { timeZone: 'Europe/Vienna', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
 
-    // 2. Format and Extract Dynamic Strings
+    // 2. Format and Generate Time Outputs
     const timePHTStr = new Intl.DateTimeFormat('en-US', optionsPHT).format(now);
     const timeESTStr = new Intl.DateTimeFormat('en-US', optionsEST).format(now);
+    const timeUKStr = new Intl.DateTimeFormat('en-US', optionsUK).format(now);
+    const timeAustriaStr = new Intl.DateTimeFormat('en-US', optionsAustria).format(now);
 
-    // 3. Update HTML Clock Layout Values
+    // 3. Update HTML Clock Layout Elements
     const phtEl = document.getElementById('pht-clock');
     const estEl = document.getElementById('est-clock');
-    const statusEl = document.getElementById('status-indicator'); // Perfectly targets your layout element
+    const ukEl = document.getElementById('uk-clock');
+    const austriaEl = document.getElementById('austria-clock');
+    const statusEl = document.getElementById('status-indicator');
 
     if (phtEl) phtEl.textContent = timePHTStr;
     if (estEl) estEl.textContent = timeESTStr;
+    if (ukEl) ukEl.textContent = timeUKStr;
+    if (austriaEl) austriaEl.textContent = timeAustriaStr;
 
     // 4. Calculate Operational Shift Rules
     const formatter = new Intl.DateTimeFormat('en-US', {
@@ -1430,24 +1439,21 @@ function updateWorldClocks() {
     let hourPHT = 0;
 
     parts.forEach(part => {
-        if (part.type === 'weekday') weekday = part.value; // e.g., "Tuesday"
-        if (part.type === 'hour') hourPHT = parseInt(part.value, 10); // 24-hour format
+        if (part.type === 'weekday') weekday = part.value; 
+        if (part.type === 'hour') hourPHT = parseInt(part.value, 10); 
     });
 
-    // 5. Apply Availability Logic
+    // 5. Shift Schedule Tracking Conditions
     let isAvailable = false;
-
     if (weekday === 'Tuesday' || weekday === 'Wednesday') {
-        // Whole day availability
         isAvailable = true;
     } else {
-        // Thursday to Monday: 7:00 PM PDT onwards corresponds to 10:00 AM PHT (10:00 AM or later)
-        if (hourPHT >= 10) {
+        if (hourPHT >= 10) { // 7:00 PM PDT is 10:00 AM PHT
             isAvailable = true;
         }
     }
 
-    // 6. Update HTML Status Banner UI State
+    // 6. Update UI Status Banner
     if (statusEl) {
         if (isAvailable) {
             statusEl.textContent = "🟢 Currently Online & Available for Shifts";
@@ -1458,6 +1464,7 @@ function updateWorldClocks() {
         }
     }
 }
+
 
 // Initial cycle execution and setup 1-second refresh ticker loop
 updateWorldClocks();
