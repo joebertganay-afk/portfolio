@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Chapter Registration | Non-Profit Network</title>
+    <style>
+        :root {
+            --bg-base: #0a0a0c;
+            --bg-surface: #121216;
+            --brand-primary: #3b82f6; /* Trustworthy Blue for Non-Profits */
+            --brand-success: #10b981;
+            --text-heading: #ffffff;
+            --text-muted: #9ca3af;
+            --border-ui: #26262b;
+        }
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-heading);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .registration-card {
+            max-width: 550px;
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-ui);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .org-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-ui);
+            padding-bottom: 20px;
+        }
+        .org-badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--brand-primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        h1 { font-size: 1.6rem; margin: 12px 0 6px; font-weight: 800; }
+        .subtitle { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .full-width { grid-column: span 2; }
+        .field-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+        label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+        input, select, textarea {
+            padding: 12px;
+            background: #0a0a0c;
+            border: 1px solid var(--border-ui);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        input:focus, select:focus, textarea:focus { border-color: var(--brand-primary); outline: none; }
+        input:disabled { background: #16161c; color: var(--text-muted); cursor: not-allowed; }
+        textarea { resize: vertical; min-height: 80px; }
+        .submit-btn {
+            width: 100%;
+            background: var(--brand-primary);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover { background: #2563eb; }
+        .database-trace {
+            display: none;
+            color: var(--brand-success);
+            background: rgba(16, 185, 129, 0.04);
+            border: 1px dashed var(--brand-success);
+            padding: 18px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-top: 25px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="registration-card">
+    <div class="org-header">
+        <span class="org-badge">🌐 Membership Portal</span>
+        <h1>Chapter Registration Pad</h1>
+        <p class="subtitle">Please submit accurate information to process official network affiliation credentials.</p>
+    </div>
+
+    <form id="registration-form" autocomplete="off">
+        <div class="form-grid">
+            <!-- Full Name -->
+            <div class="field-group full-width">
+                <label for="reg-name">Full Legal Name</label>
+                <input type="text" id="reg-name" placeholder="e.g. Joebert Ganay" required>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="field-group">
+                <label for="reg-dob">Date of Birth</label>
+                <input type="date" id="reg-dob" required>
+            </div>
+
+            <!-- Age (Auto-calculated) -->
+            <div class="field-group">
+                <label for="reg-age">Calculated Age</label>
+                <input type="number" id="reg-age" placeholder="Auto-fills from DOB" disabled>
+            </div>
+
+            <!-- Chapter Affiliation -->
+            <div class="field-group full-width">
+                <label for="reg-chapter">Chapter Affiliation</label>
+                <select id="reg-chapter" required>
+                    <option value="" disabled selected>-- Select Designated Chapter Location --</option>
+                    <option value="Metro Manila North">Metro Manila North Chapter</option>
+                    <option value="Metro Manila South">Metro Manila South Chapter</option>
+                    <option value="Central Luzon Branch">Central Luzon Branch</option>
+                    <option value="International Support Crew">International Support Crew</option>
+                </select>
+            </div>
+
+            <!-- Complete Address -->
+            <div class="field-group full-width">
+                <label for="reg-address">Complete Residential Address</label>
+                <textarea id="reg-address" placeholder="House/Block No., Street, Barangay, City, Province" required></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Finalize & Submit Registration 💾</button>
+    </form>
+
+    <!-- Operational Data Processing Trace Log -->
+    <div id="data-success-trace" class="database-trace"></div>
+</div>
+
+<script>
+    const dobInput = document.getElementById('reg-dob');
+    const ageInput = document.getElementById('reg-age');
+
+    // Live Smart Logic: Calculate precise age instantly upon picking Date of Birth
+    dobInput.addEventListener('change', function() {
+        if (!this.value) return;
+        
+        const birthDate = new Date(this.value);
+        const today = new Date();
+        
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDifference = today.getMonth() - birthDate.getMonth();
+        
+        // Adjust age if birthday hasn't occurred yet in the current calendar year
+        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        ageInput.value = age >= 0 ? age : 0;
+    });
+
+    // Form Submission Handling Lifecycle
+    document.getElementById('registration-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('reg-name').value;
+        const dob = document.getElementById('reg-dob').value;
+        const age = ageInput.value;
+        const chapter = document.getElementById('reg-chapter').value;
+        const address = document.getElementById('reg-address').value;
+        const traceBox = document.getElementById('data-success-trace');
+
+        // Formats current timestamp for verification receipt logs
+        const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' });
+
+        // Render mock operational database ingestion log packet
+        traceBox.innerHTML = `
+            <strong>✔ MEMBER RECORD PROCESSING SUCCESS</strong><br>
+            [Network Timestamp]: ${timestamp} PHT<br>
+            ------------------------------------------------<br>
+            [Ingested Name]: ${name}<br>
+            [Verified DOB]: ${dob} (Age: ${age})<br>
+            [Assigned Station]: ${chapter}<br>
+            [Postal Record]: ${address}<br>
+            ------------------------------------------------<br>
+            📊 [Status]: Logged to CRM database grid archive. Membership records synced.
+        `;
+        traceBox.style.display = 'block';
+        traceBox.scrollIntoView({ behavior: 'smooth' });
+        
+        // Clear input form rows smoothly
+        this.reset();
+        ageInput.value = '';
+    });
+</script>
+
+</body>
+</html>
