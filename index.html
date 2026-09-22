@@ -1292,56 +1292,71 @@
 </footer>
 <script>
 function updateWorldClocks() {
-  const now = new Date();
+    const now = new Date();
 
-  // 1. Time Zone Formatting Configuration
-  const optionsPHT = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-  const optionsEST = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    // 1. Time Zone Formatting Configuration
+    const optionsPHT = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const optionsEST = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
 
-  // 2. Format and Extract Dynamic Strings
-  const timePHTStr = new Intl.DateTimeFormat('en-US', optionsPHT).format(now);
-  const timeESTStr = new Intl.DateTimeFormat('en-US', optionsEST).format(now);
+    // 2. Format and Extract Dynamic Strings
+    const timePHTStr = new Intl.DateTimeFormat('en-US', optionsPHT).format(now);
+    const timeESTStr = new Intl.DateTimeFormat('en-US', optionsEST).format(now);
 
-  // 3. Update HTML Clock Layout Values
-  const phtEl = document.getElementById('pht-clock');
-  const estEl = document.getElementById('est-clock');
-  
-  if (phtEl) phtEl.textContent = timePHTStr;
-  if (estEl) estEl.textContent = timeESTStr;
+    // 3. Update HTML Clock Layout Values
+    const phtEl = document.getElementById('pht-clock');
+    const estEl = document.getElementById('est-clock');
+    const statusEl = document.getElementById('status-indicator'); // Perfectly targets your layout element
 
-  // 4. Calculate Operational Shift Rules (11:00 AM - 5:00 PM PHT)
-  const formatter = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'Asia/Manila',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false
-  });
-  
-  const parts = formatter.formatToParts(now);
-  const hourPHT = parseInt(parts.find(p => p.type === 'hour').value, 10);
-  const minutePHT = parseInt(parts.find(p => p.type === 'minute').value, 10);
-  
-  const statusEl = document.getElementById('status-indicator');
-  if (statusEl) {
-    // Current time conversion checks if you are within shift windows
-    const totalMinutesPHT = (hourPHT * 60) + minutePHT;
-    const startShift = 11 * 60; // 11:00 AM
-    const endShift = 17 * 60;   // 05:00 PM
+    if (phtEl) phtEl.textContent = timePHTStr;
+    if (estEl) estEl.textContent = timeESTStr;
 
-    if (totalMinutesPHT >= startShift && totalMinutesPHT < endShift) {
-      statusEl.textContent = "🟢 Currently Online & Available for Shifts";
-      statusEl.className = "status-banner online";
+    // 4. Calculate Operational Shift Rules
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Manila',
+        weekday: 'long',
+        hour: 'numeric',
+        hour12: false
+    });
+    
+    const parts = formatter.formatToParts(now);
+    let weekday = '';
+    let hourPHT = 0;
+
+    parts.forEach(part => {
+        if (part.type === 'weekday') weekday = part.value; // e.g., "Tuesday"
+        if (part.type === 'hour') hourPHT = parseInt(part.value, 10); // 24-hour format
+    });
+
+    // 5. Apply Availability Logic
+    let isAvailable = false;
+
+    if (weekday === 'Tuesday' || weekday === 'Wednesday') {
+        // Whole day availability
+        isAvailable = true;
     } else {
-      statusEl.textContent = "⚪ Offline | Executing Background Automated Tasks";
-      statusEl.className = "status-banner offline";
+        // Thursday to Monday: 7:00 PM PDT onwards corresponds to 10:00 AM PHT (10:00 AM or later)
+        if (hourPHT >= 10) {
+            isAvailable = true;
+        }
     }
-  }
+
+    // 6. Update HTML Status Banner UI State
+    if (statusEl) {
+        if (isAvailable) {
+            statusEl.textContent = "🟢 Currently Online & Available for Shifts";
+            statusEl.className = "status-banner online";
+        } else {
+            statusEl.textContent = "⚪ Offline | Executing Background Automated Tasks";
+            statusEl.className = "status-banner offline";
+        }
+    }
 }
 
 // Initial cycle execution and setup 1-second refresh ticker loop
 updateWorldClocks();
 setInterval(updateWorldClocks, 1000);
 </script>
+
 
 </body>
 </html>
