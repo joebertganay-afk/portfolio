@@ -1399,32 +1399,32 @@
 </footer>
 <script>
 
-  function updateWorldClocks() {
+function updateWorldClocks() {
     const now = new Date();
 
-    // 1. Time Zone Configuration Strings
+    // 1. Time Zone Configuration Strings (Targeting Australia instead of Austria)
     const optionsPHT = { timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
     const optionsEST = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
     const optionsUK = { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-    const optionsAustria = { timeZone: 'Europe/Vienna', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const optionsAU = { timeZone: 'Australia/Sydney', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
 
     // 2. Format and Generate Time Outputs
     const timePHTStr = new Intl.DateTimeFormat('en-US', optionsPHT).format(now);
     const timeESTStr = new Intl.DateTimeFormat('en-US', optionsEST).format(now);
     const timeUKStr = new Intl.DateTimeFormat('en-US', optionsUK).format(now);
-    const timeAustriaStr = new Intl.DateTimeFormat('en-US', optionsAustria).format(now);
+    const timeAUStr = new Intl.DateTimeFormat('en-US', optionsAU).format(now);
 
     // 3. Update HTML Clock Layout Elements
     const phtEl = document.getElementById('pht-clock');
     const estEl = document.getElementById('est-clock');
     const ukEl = document.getElementById('uk-clock');
-    const austriaEl = document.getElementById('austria-clock');
+    const auEl = document.getElementById('au-clock'); // Updated identifier tag hook
     const statusEl = document.getElementById('status-indicator');
 
     if (phtEl) phtEl.textContent = timePHTStr;
     if (estEl) estEl.textContent = timeESTStr;
     if (ukEl) ukEl.textContent = timeUKStr;
-    if (austriaEl) austriaEl.textContent = timeAustriaStr;
+    if (auEl) auEl.textContent = timeAUStr;
 
     // 4. Calculate Operational Shift Rules
     const formatter = new Intl.DateTimeFormat('en-US', {
@@ -1464,6 +1464,7 @@
         }
     }
 }
+
 
 
 // Initial cycle execution and setup 1-second refresh ticker loop
