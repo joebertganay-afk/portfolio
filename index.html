@@ -544,6 +544,56 @@
     html { scroll-behavior: auto; }
     .card, .contact-link { transition: none; }
   }
+.zendesk-simulator-card {
+    background: #1e1e24;
+    border: 1px solid #2d2d3a;
+    border-radius: 8px;
+    padding: 20px;
+    color: #e0e0e6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 20px 0;
+}
+.zendesk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #2d2d3a;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.zd-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4da6ff;
+}
+.zd-btn-primary {
+    background: #0366d6;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.zd-btn-primary:hover { background: #0056b3; }
+.zd-btn-primary:disabled { background: #444; cursor: not-allowed; }
+.zd-row { display: flex; gap: 15px; margin-bottom: 12px; }
+.zd-col { flex: 1; }
+.zd-col-full { flex: 100%; }
+.zd-workspace label { display: block; font-size: 0.8rem; text-transform: uppercase; color: #8a8a9e; margin-bottom: 4px; font-weight: bold; }
+.zd-field { background: #16161a; border: 1px solid #2d2d3a; padding: 10px; border-radius: 4px; color: #fff; }
+.font-mono { font-family: monospace; color: #ffca28 !important; }
+.zd-desc-box { font-style: italic; color: #b3b3cc; }
+.zd-log-box { background: #111; border: 1px solid #222; border-radius: 4px; height: 160px; overflow-y: auto; padding: 10px; font-family: monospace; font-size: 0.85rem; line-height: 1.5; color: #a2e8dd; }
+.zd-log-line { margin-bottom: 6px; border-left: 2px solid #0366d6; padding-left: 8px; animation: fadeIn 0.4s ease-in-out; }
+.zd-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 10px; border-top: 1px solid #2d2d3a; }
+.zd-badge { padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+.badge-open { background: #e53935; color: white; }
+.badge-solved { background: #43a047; color: white; }
+.zd-alert { font-size: 0.8rem; color: #81c784; transition: opacity 0.3s ease; }
+.zd-empty-box { text-align: center; padding: 40px 20px; color: #8a8a9e; border: 1px dashed #333; border-radius: 4px; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 
   :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 </style>
@@ -1280,6 +1330,60 @@
 
     </div>
 </section>
+<!-- ZENDESK SIMULATOR MODULE START -->
+<div class="zendesk-simulator-card">
+    <div class="zendesk-header">
+        <div class="zd-logo">📊 Zendesk Support Simulator</div>
+        <button id="generate-ticket-btn" class="zd-btn-primary">📥 Fetch Next Incoming Ticket</button>
+    </div>
+
+    <!-- Ticket Details Section -->
+    <div id="ticket-workspace" class="zd-workspace" style="display: none;">
+        <div class="zd-row">
+            <div class="zd-col">
+                <label>Ticket Reference #</label>
+                <div id="zd-ticket-id" class="zd-field font-mono">ZD-2026-XXXX</div>
+            </div>
+            <div class="zd-col">
+                <label>Channel / Category</label>
+                <div id="zd-ticket-category" class="zd-field">Telephony Infrastructure</div>
+            </div>
+        </div>
+
+        <div class="zd-row">
+            <div class="zd-col-full">
+                <label>Customer Issue Description</label>
+                <div id="zd-ticket-desc" class="zd-field zd-desc-box">"Inbound queues are dropping..."</div>
+            </div>
+        </div>
+
+        <!-- Live Resolution Steps Log -->
+        <div class="zd-row">
+            <div class="zd-col-full">
+                <label>Operational Resolution Lifecycle & Actions Taken</label>
+                <div id="zd-lifecycle-log" class="zd-log-box">
+                    <!-- Dynamic updates appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Ticket Status & Output Details -->
+        <div class="zd-footer">
+            <div class="zd-status-group">
+                Status: <span id="zd-ticket-status" class="zd-badge badge-open">OPEN</span>
+            </div>
+            <div id="zd-completion-alert" class="zd-alert font-mono" style="opacity: 0;">
+                ✔ Ticket documented, finalized, and saved to CRM archive. Reference sent to customer.
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty State Welcome Box -->
+    <div id="zd-empty-state" class="zd-empty-box">
+        <p>Click "Fetch Next Incoming Ticket" above to simulate a complex technical support escalation scenario and witness my live resolution workflow.</p>
+    </div>
+</div>
+<!-- ZENDESK SIMULATOR MODULE END -->
 
 <!-- FOOTER START -->
 <footer style="background: #121214; padding: 40px 0; border-top: 1px solid #1E1E24;">
@@ -1355,8 +1459,102 @@ function updateWorldClocks() {
 // Initial cycle execution and setup 1-second refresh ticker loop
 updateWorldClocks();
 setInterval(updateWorldClocks, 1000);
-</script>
+ // Array containing mock operational scenarios derived from your actual experience profile
+const ticketScenarios = [
+    {
+        id: "ZD-2026-8812",
+        category: "Telephony Infrastructure & Dialer Failures",
+        description: "Inbound call queues dropping unpredictably on Genesys dialer. Remote agents reporting silent dead-air connections upon answer during high-volume outreach windows.",
+        steps: [
+            "🔍 Analyzing routing logic and tracking active SIP trunks to identify connectivity gaps...",
+            "🛠 Isolating active route rules on Genesys dialer and resolving localized packet loss...",
+            "📞 Syncing with telephony infrastructure providers to run network validation diagnostics...",
+            "⚡ Restored active backup links, successfully verifying zero-loss connection uptime.",
+            "📝 Ticket documented systematically on Zendesk. Interaction reference number delivered to customer."
+        ]
+    },
+    {
+        id: "ZD-2026-4409",
+        category: "Email Infrastructure & Domain Defects",
+        description: "Automated outbound campaign emails bouncing back with 550 Security Block failure codes. GoHighLevel sequences hitting critical spam filters.",
+        steps: [
+            "🔍 Reviewing DNS zone configurations and cross-checking domain alignment properties...",
+            "🛠 Re-verifying authentic verification strings across SPF, DKIM, and DMARC setups...",
+            "🚀 Testing transmission paths using complex validation scoring arrays to secure deliverability...",
+            "⚡ Rectified records. Campaign deliverability scores restored safely back to 99%.",
+            "📝 Ticket documented systematically on Zendesk. Interaction reference number delivered to customer."
+        ]
+    },
+    {
+        id: "ZD-2026-2135",
+        category: "Network Connectivity & Access Restrictions",
+        description: "Remote real estate operations team locked out of internal lead sourcing platforms. CRM API requests failing with unauthorized handshake drops.",
+        steps: [
+            "🔍 Inspecting API payload schemas and trace route signatures for gateway blocks...",
+            "🛠 Re-authenticating broken webhook endpoints across connected database structures...",
+            "🔄 Synchronizing token expiration windows to bypass restricted firewall layers...",
+            "⚡ API authorization handshake verified. Team access to off-market tables restored.",
+            "📝 Ticket documented systematically on Zendesk. Interaction reference number delivered to customer."
+        ]
+    }
+];
 
+let activeTicketIndex = 0;
+
+document.getElementById('generate-ticket-btn').addEventListener('click', function() {
+    const btn = this;
+    const workspace = document.getElementById('ticket-workspace');
+    const emptyState = document.getElementById('zd-empty-state');
+    const logBox = document.getElementById('zd-lifecycle-log');
+    const statusBadge = document.getElementById('zd-ticket-status');
+    const finalAlert = document.getElementById('zd-completion-alert');
+
+    if (!btn || !workspace || !emptyState || !logBox || !statusBadge || !finalAlert) return;
+
+    // Reset layout UI elements
+    btn.disabled = true;
+    workspace.style.display = 'block';
+    emptyState.style.display = 'none';
+    logBox.innerHTML = '';
+    statusBadge.textContent = "OPEN";
+    statusBadge.className = "zd-badge badge-open";
+    finalAlert.style.opacity = '0';
+
+    // Select scenario and render base items
+    const ticket = ticketScenarios[activeTicketIndex];
+    document.getElementById('zd-ticket-id').textContent = ticket.id;
+    document.getElementById('zd-ticket-category').textContent = ticket.category;
+    document.getElementById('zd-ticket-desc').textContent = `"${ticket.description}"`;
+
+    let stepIndex = 0;
+
+    // Simulate stepping through your resolution lifecycle incrementally
+    function logNextStep() {
+        if (stepIndex < ticket.steps.length) {
+            const line = document.createElement('div');
+            line.className = 'zd-log-line';
+            line.textContent = ticket.steps[stepIndex];
+            logBox.appendChild(line);
+            logBox.scrollTop = logBox.scrollHeight; 
+            stepIndex++;
+            setTimeout(logNextStep, 2000); 
+        } else {
+            // Resolution complete lifecycle finalization
+            statusBadge.textContent = "SOLVED";
+            statusBadge.className = "zd-badge badge-solved";
+            finalAlert.style.opacity = '1';
+            btn.disabled = false;
+            
+            // Advance step queue for next test click
+            activeTicketIndex = (activeTicketIndex + 1) % ticketScenarios.length;
+        }
+    }
+
+    setTimeout(logNextStep, 800);
+});
+ 
+</script>
+ 
 
 </body>
 </html>
