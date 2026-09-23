@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Chapter Registration | Non-Profit Network</title>
+    <title>Official Network Registration Portal</title>
     <style>
         :root {
             --bg-base: #0a0a0c;
             --bg-surface: #121216;
-            --brand-primary: #3b82f6; /* Trustworthy Blue for Non-Profits */
+            --brand-primary: #3b82f6; 
             --brand-success: #10b981;
             --text-heading: #ffffff;
             --text-muted: #9ca3af;
@@ -27,32 +27,65 @@
             box-sizing: border-box;
         }
         .registration-card {
-            max-width: 550px;
+            max-width: 650px;
             width: 100%;
             background: var(--bg-surface);
             border: 1px solid var(--border-ui);
             border-radius: 12px;
             padding: 35px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            position: relative;
         }
+        
+        /* 🚨 Glowing Background Logo Effect */
+        .glowing-logo-bg {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
         .org-header {
             text-align: center;
             margin-bottom: 30px;
             border-bottom: 1px solid var(--border-ui);
             padding-bottom: 20px;
+            position: relative;
+            z-index: 2;
         }
-        .org-badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--brand-primary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        
+        .header-logo-container {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 10px;
+            background: #1e1e24;
+            border: 2px solid var(--brand-primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
+
         h1 { font-size: 1.6rem; margin: 12px 0 6px; font-weight: 800; }
         .subtitle { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .section-divider {
+            grid-column: span 2;
+            font-size: 0.85rem;
+            color: var(--brand-primary);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #2d2d3a;
+            padding-bottom: 5px;
+            margin: 15px 0 5px;
+        }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
         .full-width { grid-column: span 2; }
         .field-group { display: flex; flex-direction: column; margin-bottom: 15px; }
@@ -69,7 +102,7 @@
         }
         input:focus, select:focus, textarea:focus { border-color: var(--brand-primary); outline: none; }
         input:disabled { background: #16161c; color: var(--text-muted); cursor: not-allowed; }
-        textarea { resize: vertical; min-height: 80px; }
+        textarea { resize: vertical; min-height: 60px; }
         .submit-btn {
             width: 100%;
             background: var(--brand-primary);
@@ -80,7 +113,7 @@
             font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
             transition: background 0.2s;
         }
         .submit-btn:hover { background: #2563eb; }
@@ -101,55 +134,99 @@
 <body>
 
 <div class="registration-card">
+    <div class="glowing-logo-bg"></div>
+    
     <div class="org-header">
-        <span class="org-badge">🌐 Membership Portal</span>
+        <div class="header-logo-container">
+            🌐
+        </div>
         <h1>Chapter Registration Pad</h1>
-        <p class="subtitle">Please submit accurate information to process official network affiliation credentials.</p>
+        <p class="subtitle">Secure Operational Network Intake Form Matrix</p>
     </div>
 
     <form id="registration-form" autocomplete="off">
         <div class="form-grid">
-            <!-- Full Name -->
+            
+            <!-- 🗺️ MUNICIPAL ROUTING SELECTION -->
             <div class="field-group full-width">
-                <label for="reg-name">Full Legal Name</label>
-                <input type="text" id="reg-name" placeholder="e.g. Joebert Ganay" required>
+                <label for="reg-municipality">Target Sorting Municipality (Spreadsheet Sheet Tab Segregation)</label>
+                <select id="reg-municipality" required>
+                    <option value="" disabled selected>-- Select Target Municipality to Route Data --</option>
+                    <option value="Impasugong">Impasugong Queue</option>
+                    <option value="Sumilao">Sumilao Queue</option>
+                    <option value="Mis.Or.">Mis.Or. Queue</option>
+                </select>
             </div>
 
-            <!-- Date of Birth -->
+            <div class="section-divider">Registrant Primary Details</div>
+
+            <div class="field-group full-width">
+                <label for="reg-name">Full Legal Name</label>
+                <input type="text" id="reg-name" placeholder="First Name, Middle Initial, Last Name" required>
+            </div>
+
             <div class="field-group">
                 <label for="reg-dob">Date of Birth</label>
                 <input type="date" id="reg-dob" required>
             </div>
 
-            <!-- Age (Auto-calculated) -->
             <div class="field-group">
                 <label for="reg-age">Calculated Age</label>
                 <input type="number" id="reg-age" placeholder="Auto-fills from DOB" disabled>
             </div>
 
-            <!-- Chapter Affiliation -->
-            <div class="field-group full-width">
-                <label for="reg-chapter">Chapter Affiliation</label>
-                <select id="reg-chapter" required>
-                    <option value="" disabled selected>-- Select Designated Chapter Location --</option>
-                    <option value="Metro Manila North">Metro Manila North Chapter</option>
-                    <option value="Metro Manila South">Metro Manila South Chapter</option>
-                    <option value="Central Luzon Branch">Central Luzon Branch</option>
-                    <option value="International Support Crew">International Support Crew</option>
-                </select>
+            <div class="field-group">
+                <label for="reg-pseudonym">Pseudonym / Alias</label>
+                <input type="text" id="reg-pseudonym" placeholder="e.g. Agent Alpha" required>
             </div>
 
-            <!-- Complete Address -->
+            <div class="field-group">
+                <label for="reg-cellphone">Cellphone Number</label>
+                <input type="tel" id="reg-cellphone" placeholder="e.g. 0917XXXXXXX" required>
+            </div>
+
+            <div class="field-group">
+                <label for="reg-rank">Rank / Designation</label>
+                <input type="text" id="reg-rank" placeholder="e.g. Tier-1 Officer" required>
+            </div>
+
+            <div class="field-group">
+                <label for="reg-position">Active Position</label>
+                <input type="text" id="reg-position" placeholder="e.g. Team Lead" required>
+            </div>
+
+            <div class="field-group full-width">
+                <label for="reg-chapter">Chapter Belonged To</label>
+                <input type="text" id="reg-chapter" placeholder="Specify exact Chapter or Unit name" required>
+            </div>
+
             <div class="field-group full-width">
                 <label for="reg-address">Complete Residential Address</label>
                 <textarea id="reg-address" placeholder="House/Block No., Street, Barangay, City, Province" required></textarea>
             </div>
+
+            <div class="section-divider">Emergency Contact Information</div>
+
+            <div class="field-group full-width">
+                <label for="emg-name">Emergency Contact Person's Name</label>
+                <input type="text" id="emg-name" placeholder="Full name of emergency point-of-contact" required>
+            </div>
+
+            <div class="field-group full-width">
+                <label for="emg-phone">Emergency Contact Number</label>
+                <input type="tel" id="emg-phone" placeholder="Active phone or cellphone link" required>
+            </div>
+
+            <div class="field-group full-width">
+                <label for="emg-address">Emergency Contact Address</label>
+                <textarea id="emg-address" placeholder="Complete address of emergency contact person" required></textarea>
+            </div>
+
         </div>
 
         <button type="submit" class="submit-btn">Finalize & Submit Registration 💾</button>
     </form>
 
-    <!-- Operational Data Processing Trace Log -->
     <div id="data-success-trace" class="database-trace"></div>
 </div>
 
@@ -157,58 +234,23 @@
     const dobInput = document.getElementById('reg-dob');
     const ageInput = document.getElementById('reg-age');
 
-    // Live Smart Logic: Calculate precise age instantly upon picking Date of Birth
     dobInput.addEventListener('change', function() {
         if (!this.value) return;
-        
         const birthDate = new Date(this.value);
         const today = new Date();
-        
         let age = today.getFullYear() - birthDate.getFullYear();
         const monthDifference = today.getMonth() - birthDate.getMonth();
-        
-        // Adjust age if birthday hasn't occurred yet in the current calendar year
         if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
-        
         ageInput.value = age >= 0 ? age : 0;
     });
 
-    // Form Submission Handling Lifecycle
     document.getElementById('registration-form').addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const municipality = document.getElementById('reg-municipality').value;
         const name = document.getElementById('reg-name').value;
         const dob = document.getElementById('reg-dob').value;
         const age = ageInput.value;
-        const chapter = document.getElementById('reg-chapter').value;
-        const address = document.getElementById('reg-address').value;
-        const traceBox = document.getElementById('data-success-trace');
-
-        // Formats current timestamp for verification receipt logs
-        const timestamp = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' });
-
-        // Render mock operational database ingestion log packet
-        traceBox.innerHTML = `
-            <strong>✔ MEMBER RECORD PROCESSING SUCCESS</strong><br>
-            [Network Timestamp]: ${timestamp} PHT<br>
-            ------------------------------------------------<br>
-            [Ingested Name]: ${name}<br>
-            [Verified DOB]: ${dob} (Age: ${age})<br>
-            [Assigned Station]: ${chapter}<br>
-            [Postal Record]: ${address}<br>
-            ------------------------------------------------<br>
-            📊 [Status]: Logged to CRM database grid archive. Membership records synced.
-        `;
-        traceBox.style.display = 'block';
-        traceBox.scrollIntoView({ behavior: 'smooth' });
-        
-        // Clear input form rows smoothly
-        this.reset();
-        ageInput.value = '';
-    });
-</script>
-
-</body>
-</html>
+        const pseudonym = document.getElementById('reg-pseudonym').value;
