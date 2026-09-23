@@ -37,7 +37,6 @@
             position: relative;
         }
         
-        /* 🚨 Glowing Background Logo Effect */
         .glowing-logo-bg {
             position: absolute;
             top: 40px;
@@ -117,18 +116,61 @@
             transition: background 0.2s;
         }
         .submit-btn:hover { background: #2563eb; }
+        
+        /* 📸 High-Visibility Screenshot Receipt Interface Card Styles */
         .database-trace {
             display: none;
-            color: var(--brand-success);
-            background: rgba(16, 185, 129, 0.04);
-            border: 1px dashed var(--brand-success);
-            padding: 18px;
-            border-radius: 6px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            margin-top: 25px;
+            background: #141b18;
+            border: 2px solid var(--brand-success);
+            padding: 25px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 30px;
             line-height: 1.6;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
         }
+        .screenshot-notice {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--brand-success);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            font-size: 0.85rem;
+        }
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #1f2924;
+        }
+        .receipt-label { color: #8fa399; font-family: monospace; }
+        .receipt-value { color: #ffffff; font-weight: 500; }
+        .reference-token {
+            font-size: 1.4rem;
+            color: #ffffff;
+            background: #0d110f;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 1px dashed var(--brand-success);
+            margin: 15px 0;
+        }
+        .motto-banner {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #1f2924;
+            font-style: italic;
+            color: #a3b8ad;
+            font-weight: 600;
+        }
+        .flag-icon { display: block; font-size: 1.4rem; margin-top: 5px; }
     </style>
 </head>
 <body>
@@ -138,7 +180,7 @@
     
     <div class="org-header">
         <div class="header-logo-container">
-            🌐
+            🌐 
         </div>
         <h1>Chapter Registration Pad</h1>
         <p class="subtitle">Secure Operational Network Intake Form Matrix</p>
@@ -219,38 +261,3 @@
 
             <div class="field-group full-width">
                 <label for="emg-address">Emergency Contact Address</label>
-                <textarea id="emg-address" placeholder="Complete address of emergency contact person" required></textarea>
-            </div>
-
-        </div>
-
-        <button type="submit" class="submit-btn">Finalize & Submit Registration 💾</button>
-    </form>
-
-    <div id="data-success-trace" class="database-trace"></div>
-</div>
-
-<script>
-    const dobInput = document.getElementById('reg-dob');
-    const ageInput = document.getElementById('reg-age');
-
-    dobInput.addEventListener('change', function() {
-        if (!this.value) return;
-        const birthDate = new Date(this.value);
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const monthDifference = today.getMonth() - birthDate.getMonth();
-        if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
-        ageInput.value = age >= 0 ? age : 0;
-    });
-
-    document.getElementById('registration-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const municipality = document.getElementById('reg-municipality').value;
-        const name = document.getElementById('reg-name').value;
-        const dob = document.getElementById('reg-dob').value;
-        const age = ageInput.value;
-        const pseudonym = document.getElementById('reg-pseudonym').value;
