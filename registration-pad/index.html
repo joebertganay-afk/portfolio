@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Official United GUARDIANS Wing Worldwide Inc. registration portal."
+        content="Official United GUARDIANS Wing Worldwide Inc. Registration Portal."
     >
 
     <title>Official Network Registration Portal</title>
@@ -25,7 +21,6 @@
             --brand-primary-hover: #2563eb;
             --brand-success: #10b981;
             --brand-danger: #ef4444;
-            --brand-warning: #f59e0b;
 
             --text-heading: #ffffff;
             --text-body: #e5e7eb;
@@ -141,7 +136,6 @@
         .header-logo-container img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
             border-radius: 50%;
         }
@@ -171,9 +165,7 @@
 
             letter-spacing: 1px;
 
-            font-family:
-                "Courier New",
-                monospace;
+            font-family: "Courier New", monospace;
         }
 
         .subtitle {
@@ -256,10 +248,7 @@
 
             background: var(--bg-input);
 
-            border:
-                1px solid
-                var(--border-ui);
-
+            border: 1px solid var(--border-ui);
             border-radius: 7px;
 
             color: #ffffff;
@@ -281,8 +270,7 @@
         input:focus,
         select:focus,
         textarea:focus {
-            border-color:
-                var(--brand-primary);
+            border-color: var(--brand-primary);
 
             outline: none;
 
@@ -318,6 +306,51 @@
             line-height: 1.4;
         }
 
+        /* PHOTO UPLOAD */
+
+        .photo-upload-box {
+            background: #0d0d11;
+
+            border: 1px dashed #34343d;
+
+            border-radius: 8px;
+
+            padding: 15px;
+        }
+
+        .photo-preview-container {
+            display: none;
+
+            text-align: center;
+
+            margin-top: 15px;
+        }
+
+        .photo-preview {
+            width: 130px;
+            height: 130px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            border:
+                2px solid
+                var(--brand-primary);
+
+            box-shadow:
+                0 0 20px
+                rgba(59, 130, 246, 0.15);
+        }
+
+        .photo-preview-label {
+            color: #73737f;
+
+            font-size: 0.72rem;
+
+            margin-top: 7px;
+        }
+
         .privacy-box {
             grid-column: span 2;
 
@@ -325,10 +358,7 @@
 
             padding: 15px;
 
-            border:
-                1px solid
-                var(--border-ui);
-
+            border: 1px solid var(--border-ui);
             border-radius: 8px;
 
             background: #0d0d11;
@@ -354,6 +384,7 @@
 
             font-size: 0.79rem;
             font-weight: 500;
+
             line-height: 1.55;
 
             color: #b4b4bd;
@@ -371,8 +402,7 @@
         .submit-btn {
             width: 100%;
 
-            background:
-                var(--brand-primary);
+            background: var(--brand-primary);
 
             color: #ffffff;
 
@@ -397,16 +427,13 @@
         }
 
         .submit-btn:hover:not(:disabled) {
-            background:
-                var(--brand-primary-hover);
+            background: var(--brand-primary-hover);
 
-            transform:
-                translateY(-1px);
+            transform: translateY(-1px);
         }
 
         .submit-btn:disabled {
             cursor: not-allowed;
-
             opacity: 0.6;
         }
 
@@ -420,6 +447,7 @@
             border-radius: 7px;
 
             font-size: 0.85rem;
+
             line-height: 1.5;
         }
 
@@ -449,9 +477,7 @@
             color: #93c5fd;
         }
 
-        /* ============================
-           RECEIPT / DATABASE TRACE
-        ============================ */
+        /* RECEIPT */
 
         .database-trace {
             display: none;
@@ -507,8 +533,7 @@
             background:
                 rgba(16, 185, 129, 0.1);
 
-            color:
-                var(--brand-success);
+            color: var(--brand-success);
 
             padding: 10px;
 
@@ -530,8 +555,7 @@
         .receipt-row {
             display: flex;
 
-            justify-content:
-                space-between;
+            justify-content: space-between;
 
             gap: 20px;
 
@@ -605,6 +629,27 @@
             word-break: break-word;
         }
 
+        .photo-receipt-container {
+            display: none;
+
+            text-align: center;
+
+            margin: 18px 0;
+        }
+
+        .photo-receipt {
+            width: 130px;
+            height: 130px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            border:
+                2px solid
+                var(--brand-success);
+        }
+
         .motto-banner {
             text-align: center;
 
@@ -668,18 +713,14 @@
             line-height: 1.5;
         }
 
-        /* ============================
-           MOBILE RESPONSIVENESS
-        ============================ */
-
         @media (max-width: 650px) {
+
             body {
                 padding: 20px 12px;
             }
 
             .registration-card {
                 padding: 25px 18px;
-
                 border-radius: 10px;
             }
 
@@ -699,7 +740,6 @@
 
             .receipt-row {
                 flex-direction: column;
-
                 gap: 2px;
             }
 
@@ -709,7 +749,6 @@
 
             .reference-token {
                 font-size: 1rem;
-
                 letter-spacing: 1px;
             }
         }
@@ -722,14 +761,20 @@
 
     <div class="glowing-logo-bg"></div>
 
+    <!-- ==============================
+         ORGANIZATION HEADER
+    =============================== -->
+
     <header class="org-header">
 
         <div class="header-logo-container">
+
             <img
                 src="../logo.png"
                 alt="United GUARDIANS Wing Worldwide Inc. Logo"
                 onerror="this.style.display='none';"
             >
+
         </div>
 
         <h1>
@@ -746,9 +791,10 @@
 
     </header>
 
-    <!-- =====================================
+
+    <!-- ==============================
          REGISTRATION FORM
-    ====================================== -->
+    =============================== -->
 
     <form
         id="registration-form"
@@ -758,13 +804,16 @@
 
         <div class="form-grid">
 
-            <!-- MUNICIPAL ROUTING -->
+            <!-- WING SELECTION -->
 
             <div class="field-group full-width">
 
                 <label for="reg-municipality">
-                    Target Sorting Municipality
+
+                    Official Wing / Chapter
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <select
@@ -772,33 +821,59 @@
                     name="municipality"
                     required
                 >
+
                     <option
                         value=""
-                        disabled
                         selected
+                        disabled
                     >
-                        -- Select Municipality --
+                        -- Select Your Wing --
                     </option>
 
-                    <option value="Impasugong">
-                        Impasugong Queue
+                    <option value="Impasugong Wing">
+                        Impasugong Wing
                     </option>
 
-                    <option value="Sumilao">
-                        Sumilao Queue
+                    <option value="Sumilao Wing">
+                        Sumilao Wing
                     </option>
 
-                    <option value="Mis.Or.">
-                        Mis.Or. Queue
+                    <option value="Manolo Fortich Wing">
+                        Manolo Fortich Wing
+                    </option>
+
+                    <option value="Malitbog Wing">
+                        Malitbog Wing
+                    </option>
+
+                    <option value="Jasaan Wing">
+                        Jasaan Wing
+                    </option>
+
+                    <option value="Villanueva Wing">
+                        Villanueva Wing
+                    </option>
+
+                    <option value="Tagoloan Wing">
+                        Tagoloan Wing
+                    </option>
+
+                    <option value="Balingasag Wing">
+                        Balingasag Wing
+                    </option>
+
+                    <option value="Lagonglong Wing">
+                        Lagonglong Wing
                     </option>
 
                 </select>
 
                 <small class="helper-text">
-                    Your selection determines which authorized worksheet receives the registration.
+                    Select the official Wing where this registration belongs.
                 </small>
 
             </div>
+
 
             <!-- PRIMARY DETAILS -->
 
@@ -806,11 +881,15 @@
                 Registrant Primary Details
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-fname">
+
                     First Name
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <input
@@ -823,6 +902,7 @@
                 >
 
             </div>
+
 
             <div class="field-group">
 
@@ -840,11 +920,15 @@
 
             </div>
 
+
             <div class="field-group full-width">
 
                 <label for="reg-sname">
+
                     Surname / Last Name
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <input
@@ -858,11 +942,15 @@
 
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-alias">
+
                     Pseudonym / Alias / Call Sign
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <input
@@ -876,11 +964,15 @@
 
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-rank">
+
                     Rank / Position
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <select
@@ -933,11 +1025,15 @@
 
             </div>
 
+
             <div class="field-group full-width">
 
                 <label for="reg-wing">
+
                     Official Chapter / Wing Name Affiliation
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <input
@@ -951,17 +1047,22 @@
 
             </div>
 
+
             <!-- PERSONAL INFORMATION -->
 
             <div class="section-divider">
                 Personal Information
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-dob">
+
                     Date of Birth
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <input
@@ -972,6 +1073,7 @@
                 >
 
             </div>
+
 
             <div class="field-group">
 
@@ -989,11 +1091,15 @@
 
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-status">
+
                     Civil Status
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <select
@@ -1034,6 +1140,7 @@
 
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-gender">
@@ -1065,17 +1172,22 @@
 
             </div>
 
+
             <!-- CONTACT INFORMATION -->
 
             <div class="section-divider">
                 Contact Information
             </div>
 
+
             <div class="field-group">
 
                 <label for="reg-phone">
+
                     Mobile Number
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <input
@@ -1089,6 +1201,7 @@
                 >
 
             </div>
+
 
             <div class="field-group">
 
@@ -1106,11 +1219,15 @@
 
             </div>
 
+
             <div class="field-group full-width">
 
                 <label for="reg-address">
+
                     Complete Residential Address
+
                     <span class="req-star">*</span>
+
                 </label>
 
                 <textarea
@@ -1123,11 +1240,63 @@
 
             </div>
 
-            <!-- OPTIONAL DETAILS -->
+
+            <!-- IDENTIFICATION PHOTO -->
+
+            <div class="section-divider">
+                Identification Photo
+            </div>
+
+
+            <div class="field-group full-width">
+
+                <div class="photo-upload-box">
+
+                    <label for="reg-photo">
+                        2×2 ID Picture (Optional)
+                    </label>
+
+                    <input
+                        type="file"
+                        id="reg-photo"
+                        name="photo"
+                        accept="image/png,image/jpeg,image/jpg,image/webp"
+                    >
+
+                    <small class="helper-text">
+                        Optional. Upload a recent 2×2 ID picture.
+                        JPG, JPEG, PNG, or WEBP only. Maximum 5 MB.
+                    </small>
+
+
+                    <div
+                        id="photo-preview-container"
+                        class="photo-preview-container"
+                    >
+
+                        <img
+                            id="photo-preview"
+                            class="photo-preview"
+                            alt="2x2 photo preview"
+                        >
+
+                        <div class="photo-preview-label">
+                            Photo Preview
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADDITIONAL INFORMATION -->
 
             <div class="section-divider">
                 Additional Information
             </div>
+
 
             <div class="field-group full-width">
 
@@ -1144,7 +1313,8 @@
 
             </div>
 
-            <!-- PRIVACY CONSENT -->
+
+            <!-- PRIVACY -->
 
             <div class="privacy-box">
 
@@ -1162,7 +1332,13 @@
                             Data Privacy Consent:
                         </span>
 
-                        I confirm that the information provided is accurate and voluntarily submitted for legitimate organizational registration, verification, record management, and authorized internal administrative purposes. I understand that access to this information should be restricted to authorized personnel.
+                        I confirm that the information provided is accurate
+                        and voluntarily submitted for legitimate
+                        organizational registration, verification, record
+                        management, and authorized internal administrative
+                        purposes. I understand that access to this
+                        information should be restricted to authorized
+                        personnel.
 
                         <span class="req-star">*</span>
 
@@ -1174,6 +1350,7 @@
 
         </div>
 
+
         <button
             type="submit"
             class="submit-btn"
@@ -1181,6 +1358,7 @@
         >
             Submit Official Registration
         </button>
+
 
         <div
             id="form-message"
@@ -1191,9 +1369,10 @@
 
     </form>
 
-    <!-- =====================================
+
+    <!-- ==============================
          SUCCESS RECEIPT
-    ====================================== -->
+    =============================== -->
 
     <section
         id="database-trace"
@@ -1209,9 +1388,27 @@
             Official Network Registration Receipt
         </div>
 
+
         <div class="screenshot-notice">
             📸 You may screenshot this receipt for your reference.
         </div>
+
+
+        <!-- OPTIONAL PHOTO ON RECEIPT -->
+
+        <div
+            id="photo-receipt-container"
+            class="photo-receipt-container"
+        >
+
+            <img
+                id="photo-receipt"
+                class="photo-receipt"
+                alt="Registrant identification photo"
+            >
+
+        </div>
+
 
         <div class="receipt-row">
 
@@ -1228,6 +1425,7 @@
 
         </div>
 
+
         <div class="receipt-row">
 
             <span class="receipt-label">
@@ -1242,6 +1440,7 @@
             </span>
 
         </div>
+
 
         <div class="receipt-row">
 
@@ -1258,6 +1457,7 @@
 
         </div>
 
+
         <div class="receipt-row">
 
             <span class="receipt-label">
@@ -1273,10 +1473,11 @@
 
         </div>
 
+
         <div class="receipt-row">
 
             <span class="receipt-label">
-                MUNICIPALITY
+                WING
             </span>
 
             <span
@@ -1287,6 +1488,7 @@
             </span>
 
         </div>
+
 
         <div class="receipt-row">
 
@@ -1303,9 +1505,11 @@
 
         </div>
 
+
         <div class="reference-label">
             Registration Reference Number
         </div>
+
 
         <div
             id="reference-token"
@@ -1314,12 +1518,17 @@
             —
         </div>
 
+
         <div class="motto-banner">
+
             United GUARDIANS Wing Worldwide Inc.
+
             <span class="flag-icon">
                 🇵🇭
             </span>
+
         </div>
+
 
         <button
             type="button"
@@ -1331,83 +1540,108 @@
 
     </section>
 
+
     <div class="security-note">
-        Personal information submitted through this portal should only be stored in a restricted-access system and accessed by authorized organizational personnel.
+
+        Personal information submitted through this portal should only
+        be stored in a restricted-access system and accessed by
+        authorized organizational personnel.
+
     </div>
 
 </div>
 
 
 <script>
-    /*
-    ==========================================================
-    GOOGLE APPS SCRIPT CONFIGURATION
-    ==========================================================
 
-    Add your deployed Google Apps Script Web App URL below.
+    /* =========================================================
+       GOOGLE APPS SCRIPT CONFIGURATION
 
-    Example:
-    const APPS_SCRIPT_URL =
-        "https://script.google.com/macros/s/XXXXXXXXXXXX/exec";
+       LEAVE BLANK FOR NOW.
 
-    IMPORTANT:
-    Do NOT place a public Google Sheet URL here.
+       After we create and deploy your Google Apps Script,
+       we will put the Web App URL here.
 
-    If this remains blank, the page will run in DEMO MODE.
-    ==========================================================
-    */
+       Example:
+
+       const APPS_SCRIPT_URL =
+       "https://script.google.com/macros/s/XXXXXXXX/exec";
+
+       ========================================================= */
 
     const APPS_SCRIPT_URL = "";
 
 
-    /*
-    ==========================================================
-    ELEMENT REFERENCES
-    ==========================================================
-    */
+    /* =========================================================
+       ELEMENTS
+       ========================================================= */
 
     const form =
-        document.getElementById("registration-form");
+        document.getElementById(
+            "registration-form"
+        );
 
     const submitButton =
-        document.getElementById("submit-btn");
+        document.getElementById(
+            "submit-btn"
+        );
 
     const formMessage =
-        document.getElementById("form-message");
+        document.getElementById(
+            "form-message"
+        );
 
     const dobInput =
-        document.getElementById("reg-dob");
+        document.getElementById(
+            "reg-dob"
+        );
 
     const ageInput =
-        document.getElementById("reg-age");
+        document.getElementById(
+            "reg-age"
+        );
 
     const receipt =
-        document.getElementById("database-trace");
+        document.getElementById(
+            "database-trace"
+        );
 
     const newRegistrationButton =
-        document.getElementById("new-registration-btn");
+        document.getElementById(
+            "new-registration-btn"
+        );
+
+    const photoInput =
+        document.getElementById(
+            "reg-photo"
+        );
+
+    const photoPreviewContainer =
+        document.getElementById(
+            "photo-preview-container"
+        );
+
+    const photoPreview =
+        document.getElementById(
+            "photo-preview"
+        );
 
 
-    /*
-    ==========================================================
-    PREVENT FUTURE DATE OF BIRTH
-    ==========================================================
-    */
+    /* =========================================================
+       DATE LIMIT
+       ========================================================= */
 
     const today =
         new Date();
 
-    const maxDOB =
-        today.toISOString().split("T")[0];
+    dobInput.max =
+        today.toISOString()
+            .split("T")[0];
 
-    dobInput.max = maxDOB;
 
-
-    /*
-    ==========================================================
-    AGE CALCULATION
-    ==========================================================
-    */
+    /* =========================================================
+       AGE CALCULATION
+       ========================================================= */
 
     function calculateAge(dateOfBirth) {
 
@@ -1416,29 +1650,36 @@
         }
 
         const birthDate =
-            new Date(dateOfBirth + "T00:00:00");
+            new Date(
+                dateOfBirth + "T00:00:00"
+            );
 
         const currentDate =
             new Date();
 
         let age =
             currentDate.getFullYear()
-            - birthDate.getFullYear();
+            -
+            birthDate.getFullYear();
 
         const monthDifference =
             currentDate.getMonth()
-            - birthDate.getMonth();
+            -
+            birthDate.getMonth();
+
 
         if (
             monthDifference < 0 ||
             (
                 monthDifference === 0 &&
-                currentDate.getDate() <
+                currentDate.getDate()
+                <
                 birthDate.getDate()
             )
         ) {
             age--;
         }
+
 
         if (
             age < 0 ||
@@ -1446,6 +1687,7 @@
         ) {
             return "";
         }
+
 
         return age;
     }
@@ -1456,56 +1698,158 @@
         function () {
 
             ageInput.value =
-                calculateAge(this.value);
+                calculateAge(
+                    this.value
+                );
 
         }
     );
 
 
-    /*
-    ==========================================================
-    CLEAN USER INPUT
-    ==========================================================
-    */
+    /* =========================================================
+       PHOTO VALIDATION + PREVIEW
+       ========================================================= */
+
+    photoInput.addEventListener(
+        "change",
+        function () {
+
+            const file =
+                this.files[0];
+
+
+            if (!file) {
+
+                photoPreviewContainer.style.display =
+                    "none";
+
+                photoPreview.src = "";
+
+                return;
+            }
+
+
+            const allowedTypes = [
+                "image/jpeg",
+                "image/png",
+                "image/webp"
+            ];
+
+
+            if (
+                !allowedTypes.includes(
+                    file.type
+                )
+            ) {
+
+                alert(
+                    "Please upload a JPG, JPEG, PNG, or WEBP image."
+                );
+
+                this.value = "";
+
+                photoPreviewContainer.style.display =
+                    "none";
+
+                return;
+            }
+
+
+            const maxSize =
+                5 * 1024 * 1024;
+
+
+            if (
+                file.size > maxSize
+            ) {
+
+                alert(
+                    "The photo must be 5 MB or smaller."
+                );
+
+                this.value = "";
+
+                photoPreviewContainer.style.display =
+                    "none";
+
+                return;
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function (event) {
+
+                    photoPreview.src =
+                        event.target.result;
+
+                    photoPreviewContainer.style.display =
+                        "block";
+
+                };
+
+
+            reader.readAsDataURL(
+                file
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       CLEAN TEXT
+       ========================================================= */
 
     function cleanText(value) {
 
-        return String(value || "")
-            .trim()
-            .replace(/\s+/g, " ");
+        return String(
+            value || ""
+        )
+        .trim()
+        .replace(
+            /\s+/g,
+            " "
+        );
 
     }
 
 
-    /*
-    ==========================================================
-    REFERENCE NUMBER
-    ==========================================================
-    */
+    /* =========================================================
+       REFERENCE NUMBER
+       ========================================================= */
 
     function generateReferenceNumber() {
 
         const date =
             new Date();
 
+
         const year =
             date.getFullYear();
+
 
         const month =
             String(
                 date.getMonth() + 1
             ).padStart(2, "0");
 
+
         const day =
             String(
                 date.getDate()
             ).padStart(2, "0");
+
 
         const randomNumber =
             Math.floor(
                 100000 +
                 Math.random() * 900000
             );
+
 
         return (
             "UGWWI-" +
@@ -1518,84 +1862,9 @@
     }
 
 
-    /*
-    ==========================================================
-    FORM VALIDATION
-    ==========================================================
-    */
-
-    function validateRegistration(data) {
-
-        if (
-            !data.municipality ||
-            !data.firstName ||
-            !data.surname ||
-            !data.alias ||
-            !data.rank ||
-            !data.chapter ||
-            !data.dateOfBirth ||
-            !data.civilStatus ||
-            !data.phone ||
-            !data.address
-        ) {
-            return "Please complete all required fields.";
-        }
-
-
-        if (
-            !data.age ||
-            data.age < 1 ||
-            data.age > 120
-        ) {
-            return "Please enter a valid date of birth.";
-        }
-
-
-        const phonePattern =
-            /^[0-9+\-\s()]{7,20}$/;
-
-        if (
-            !phonePattern.test(data.phone)
-        ) {
-            return "Please enter a valid mobile number.";
-        }
-
-
-        if (data.email) {
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (
-                !emailPattern.test(
-                    data.email
-                )
-            ) {
-                return "Please enter a valid email address.";
-            }
-        }
-
-
-        if (
-            !document
-                .getElementById(
-                    "privacy-consent"
-                )
-                .checked
-        ) {
-            return "You must agree to the data privacy consent before submitting.";
-        }
-
-
-        return null;
-    }
-
-
-    /*
-    ==========================================================
-    BUILD DATA PAYLOAD
-    ==========================================================
-    */
+    /* =========================================================
+       FORM PAYLOAD
+       ========================================================= */
 
     function getFormPayload() {
 
@@ -1606,12 +1875,14 @@
                 ).value
             );
 
+
         const middleName =
             cleanText(
                 document.getElementById(
                     "reg-mname"
                 ).value
             );
+
 
         const surname =
             cleanText(
@@ -1727,15 +1998,112 @@
 
             referenceNumber:
                 generateReferenceNumber()
+
         };
     }
 
 
-    /*
-    ==========================================================
-    DISPLAY MESSAGE
-    ==========================================================
-    */
+    /* =========================================================
+       VALIDATION
+       ========================================================= */
+
+    function validateRegistration(
+        data
+    ) {
+
+        if (
+            !data.municipality ||
+            !data.firstName ||
+            !data.surname ||
+            !data.alias ||
+            !data.rank ||
+            !data.chapter ||
+            !data.dateOfBirth ||
+            !data.civilStatus ||
+            !data.phone ||
+            !data.address
+        ) {
+
+            return (
+                "Please complete all required fields."
+            );
+
+        }
+
+
+        if (
+            !data.age ||
+            data.age < 1 ||
+            data.age > 120
+        ) {
+
+            return (
+                "Please enter a valid date of birth."
+            );
+
+        }
+
+
+        const phonePattern =
+            /^[0-9+\-\s()]{7,20}$/;
+
+
+        if (
+            !phonePattern.test(
+                data.phone
+            )
+        ) {
+
+            return (
+                "Please enter a valid mobile number."
+            );
+
+        }
+
+
+        if (data.email) {
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+            if (
+                !emailPattern.test(
+                    data.email
+                )
+            ) {
+
+                return (
+                    "Please enter a valid email address."
+                );
+
+            }
+
+        }
+
+
+        if (
+            !document
+                .getElementById(
+                    "privacy-consent"
+                )
+                .checked
+        ) {
+
+            return (
+                "Please agree to the Data Privacy Consent."
+            );
+
+        }
+
+
+        return null;
+    }
+
+
+    /* =========================================================
+       MESSAGE
+       ========================================================= */
 
     function showMessage(
         message,
@@ -1746,14 +2114,16 @@
             message;
 
         formMessage.className =
-            "form-message " + type;
+            "form-message " +
+            type;
 
     }
 
 
     function clearMessage() {
 
-        formMessage.textContent = "";
+        formMessage.textContent =
+            "";
 
         formMessage.className =
             "form-message";
@@ -1761,13 +2131,101 @@
     }
 
 
-    /*
-    ==========================================================
-    DISPLAY RECEIPT
-    ==========================================================
-    */
+    /* =========================================================
+       GOOGLE APPS SCRIPT SUBMISSION
+       ========================================================= */
 
-    function showReceipt(data) {
+    async function submitToGoogleSheets(
+        data
+    ) {
+
+        /*
+         * DEMO MODE
+         *
+         * Until the Apps Script URL is supplied,
+         * the page simulates successful processing.
+         */
+
+        if (!APPS_SCRIPT_URL) {
+
+            await new Promise(
+                resolve =>
+                    setTimeout(
+                        resolve,
+                        700
+                    )
+            );
+
+
+            return {
+                success: true,
+                demoMode: true
+            };
+
+        }
+
+
+        /*
+         * LIVE MODE
+         */
+
+        const response =
+            await fetch(
+                APPS_SCRIPT_URL,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            data
+                        )
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Server returned HTTP " +
+                response.status
+            );
+
+        }
+
+
+        const responseText =
+            await response.text();
+
+
+        try {
+
+            return JSON.parse(
+                responseText
+            );
+
+        } catch {
+
+            return {
+                success: true
+            };
+
+        }
+
+    }
+
+
+    /* =========================================================
+       SHOW RECEIPT
+       ========================================================= */
+
+    function showReceipt(
+        data
+    ) {
 
         document.getElementById(
             "receipt-name"
@@ -1802,22 +2260,48 @@
         document.getElementById(
             "receipt-date"
         ).textContent =
-            new Date().toLocaleString(
-                "en-PH",
-                {
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                    hour: "numeric",
-                    minute: "2-digit"
-                }
-            );
+            new Date()
+                .toLocaleString(
+                    "en-PH",
+                    {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "2-digit"
+                    }
+                );
 
 
         document.getElementById(
             "reference-token"
         ).textContent =
             data.referenceNumber;
+
+
+        /*
+         * Show uploaded photo on receipt
+         * if available.
+         */
+
+        if (
+            photoPreview.src
+        ) {
+
+            const receiptPhoto =
+                document.getElementById(
+                    "photo-receipt"
+                );
+
+            receiptPhoto.src =
+                photoPreview.src;
+
+            document.getElementById(
+                "photo-receipt-container"
+            ).style.display =
+                "block";
+
+        }
 
 
         receipt.classList.add(
@@ -1833,90 +2317,13 @@
             behavior: "smooth",
             block: "start"
         });
-    }
-
-
-    /*
-    ==========================================================
-    SEND TO GOOGLE APPS SCRIPT
-    ==========================================================
-    */
-
-    async function submitToGoogleSheets(data) {
-
-        /*
-        DEMO MODE
-
-        If no Apps Script URL is configured,
-        simulate successful processing.
-        */
-
-        if (!APPS_SCRIPT_URL) {
-
-            await new Promise(
-                resolve =>
-                    setTimeout(resolve, 700)
-            );
-
-            return {
-                success: true,
-                demoMode: true
-            };
-        }
-
-
-        const response =
-            await fetch(
-                APPS_SCRIPT_URL,
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "text/plain;charset=utf-8"
-                    },
-
-                    body:
-                        JSON.stringify(data)
-                }
-            );
-
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Server returned HTTP " +
-                response.status
-            );
-        }
-
-
-        const responseText =
-            await response.text();
-
-
-        try {
-
-            return JSON.parse(
-                responseText
-            );
-
-        } catch {
-
-            return {
-                success: true
-            };
-
-        }
 
     }
 
 
-    /*
-    ==========================================================
-    FORM SUBMISSION
-    ==========================================================
-    */
+    /* =========================================================
+       FORM SUBMISSION
+       ========================================================= */
 
     form.addEventListener(
         "submit",
@@ -1927,15 +2334,14 @@
             clearMessage();
 
 
-            /*
-            Trigger native required-field validation.
-            */
-
-            if (!form.checkValidity()) {
+            if (
+                !form.checkValidity()
+            ) {
 
                 form.reportValidity();
 
                 return;
+
             }
 
 
@@ -1944,7 +2350,9 @@
 
 
             const validationError =
-                validateRegistration(data);
+                validateRegistration(
+                    data
+                );
 
 
             if (validationError) {
@@ -1955,10 +2363,12 @@
                 );
 
                 return;
+
             }
 
 
-            submitButton.disabled = true;
+            submitButton.disabled =
+                true;
 
             submitButton.textContent =
                 "Processing Registration...";
@@ -1985,7 +2395,9 @@
                 }
 
 
-                showReceipt(data);
+                showReceipt(
+                    data
+                );
 
 
             } catch (error) {
@@ -2016,11 +2428,9 @@
     );
 
 
-    /*
-    ==========================================================
-    START NEW REGISTRATION
-    ==========================================================
-    */
+    /* =========================================================
+       NEW REGISTRATION
+       ========================================================= */
 
     newRegistrationButton.addEventListener(
         "click",
@@ -2028,13 +2438,29 @@
 
             form.reset();
 
-            ageInput.value = "";
+            ageInput.value =
+                "";
+
+            photoPreview.src =
+                "";
+
+            photoPreviewContainer.style.display =
+                "none";
+
+
+            document.getElementById(
+                "photo-receipt-container"
+            ).style.display =
+                "none";
+
 
             clearMessage();
+
 
             receipt.classList.remove(
                 "visible"
             );
+
 
             form.style.display =
                 "block";
