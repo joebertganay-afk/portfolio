@@ -89,6 +89,7 @@
         .full-width { grid-column: span 2; }
         .field-group { display: flex; flex-direction: column; margin-bottom: 15px; }
         label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+        .req-star { color: #ef4444; margin-left: 2px; }
         input, select, textarea {
             padding: 12px;
             background: #0a0a0c;
@@ -203,14 +204,26 @@
 
             <div class="section-divider">Registrant Primary Details</div>
 
-            <div class="field-group full-width">
-                <label for="reg-name">Full Legal Name</label>
-                <input type="text" id="reg-name" placeholder="First Name, Middle Initial, Last Name" required>
+            <!-- 👤 FULL NAME GROUP SPLIT -->
+            <div class="field-group">
+                <label for="reg-fname">First Name<span class="req-star">*</span></label>
+                <input type="text" id="reg-fname" placeholder="Given name" required>
             </div>
 
             <div class="field-group">
-                <label for="reg-alias">Pseudonym / Alias / Call Sign</label>
-                <input type="text" id="reg-alias" placeholder="Organizational Alias (If Applicable)" required>
+                <label for="reg-mname">Middle Name<span class="req-star">*</span></label>
+                <input type="text" id="reg-mname" placeholder="Middle name input" required>
+            </div>
+
+            <div class="field-group full-width">
+                <label for="reg-sname">Surname / Last Name<span class="req-star">*</span></label>
+                <input type="text" id="reg-sname" placeholder="Family surname" required>
+            </div>
+
+            <!-- 📱 CORE ACCESS IDENTIFIERS -->
+            <div class="field-group">
+                <label for="reg-alias">Pseudonym / Alias / Call Sign<span class="req-star">*</span></label>
+                <input type="text" id="reg-alias" placeholder="Organizational Alias" required>
             </div>
 
             <div class="field-group">
@@ -229,21 +242,4 @@
             </div>
 
             <div class="field-group full-width">
-                <label for="reg-wing">Official Chapter / Wing Name affiliation</label>
-                <input type="text" id="reg-wing" placeholder="Specify full name of designated local wing asset" required>
-            </div>
-
-            <div class="field-group">
-                <label for="reg-dob">Date of Birth</label>
-                <input type="date" id="reg-dob" required>
-            </div>
-
-            <div class="field-group">
-                <label for="reg-age">Calculated Age</label>
-                <input type="text" id="reg-age" placeholder="Automated Engine Metric" disabled>
-            </div>
-
-            <div class="field-group">
-                <label for="reg-blood">Blood Type</label>
-                <select id="reg-blood" required>
-                    <option value="" disabled selected>-- Select Type --</option>
+                <label for="reg-wing">Official Chapter / Wing Name affiliation<span class="req-star">*</span></label>
