@@ -256,6 +256,65 @@
                 <label for="emg-name">Emergency Contact Person's Name</label>
                 <input type="text" id="emg-name" placeholder="Full name of emergency point-of-contact" required>
             </div>
+            <div class="field-group full-width">
+                <label for="emg-phone">Emergency Contact Number</label>
+                <input type="tel" id="emg-phone" placeholder="Active phone or cellphone link" required>
+            </div>
+
+            <div class="field-group full-width">
+                <label for="emg-address">Emergency Contact Address</label>
+                <textarea id="emg-address" placeholder="Complete address of emergency contact person" required></textarea>
+            </div>
+
+        </div> <!-- Closes .form-grid container safely -->
+
+        <!-- 💾 SUBMIT ENGINE BUTTON -->
+        <button type="submit" class="submit-btn">Finalize & Submit Registration 💾</button>
+    </form>
+
+    <!-- 📸 DYNAMIC RECEIPT PRINT NODE OUTFLOW CONTAINER -->
+    <div id="data-success-trace" class="database-trace">
+        <div class="screenshot-notice">📸 REGISTRATION SUCCESSFUL: PLEASE TAKE A SCREENSHOT FOR YOUR REFERENCE</div>
+        
+        <div class="receipt-row">
+            <span class="receipt-label">[SYSTEM STATUS]</span>
+            <span class="receipt-value" style="color: #10b981; font-weight: bold;">✔ VERIFIED & DOCUMENTED</span>
+        </div>
+        <div class="receipt-row">
+            <span class="receipt-label">[TIMESTAMP PHT]</span>
+            <span id="lbl-timestamp" class="receipt-value">--</span>
+        </div>
+        <div class="receipt-row">
+            <span class="receipt-label">[MUNICIPALITY TAB]</span>
+            <span id="lbl-municipality" class="receipt-value" style="font-weight: bold;">--</span>
+        </div>
+        <div class="receipt-row">
+            <span class="receipt-label">[REGISTRANT NAME]</span>
+            <span id="lbl-name" class="receipt-value">--</span>
+        </div>
+        <div class="receipt-row">
+            <span class="receipt-label">[PSEUDONYM / ALIAS]</span>
+            <span id="lbl-pseudonym" class="receipt-value">--</span>
+        </div>
+        <div class="receipt-row">
+            <span class="receipt-label">[RANK / POSITION]</span>
+            <span id="lbl-rank-pos" class="receipt-value">--</span>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px; font-size: 0.8rem; color: #8fa399; font-family: monospace;">
+            OFFICIAL SECURITY TRACKING TOKEN
+        </div>
+        <div id="lbl-reference" class="reference-token">REG-2026-XXXXX</div>
+
+        <div style="font-size: 0.85rem; color: #a3b8ad; text-align: center; padding: 10px 10px 0; line-height: 1.4;">
+            Thank you for your effort and dedication. Your intake data packet has been successfully encrypted, compiled, and synchronized straight into the master database ledger files.
+        </div>
+
+        <div class="motto-banner">
+            "Service Through Strong Brotherhood"
+            <span class="flag-icon">🇵🇭</span>
+        </div>
+    </div>
 
             <div class="field-group full-width">
                 <label for="emg-phone">Emergency Contact Number</label>
