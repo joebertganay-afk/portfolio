@@ -2,244 +2,2053 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Official United GUARDIANS Wing Worldwide Inc. registration portal."
+    >
+
     <title>Official Network Registration Portal</title>
+
     <style>
         :root {
             --bg-base: #0a0a0c;
             --bg-surface: #121216;
-            --brand-primary: #3b82f6; 
+            --bg-input: #0a0a0c;
+
+            --brand-primary: #3b82f6;
+            --brand-primary-hover: #2563eb;
             --brand-success: #10b981;
+            --brand-danger: #ef4444;
+            --brand-warning: #f59e0b;
+
             --text-heading: #ffffff;
+            --text-body: #e5e7eb;
             --text-muted: #9ca3af;
+
             --border-ui: #26262b;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-base);
             color: var(--text-heading);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Arial,
+                sans-serif;
+
             margin: 0;
             padding: 40px 20px;
+
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
+
             min-height: 100vh;
-            box-sizing: border-box;
         }
+
         .registration-card {
-            max-width: 650px;
+            max-width: 700px;
             width: 100%;
+
             background: var(--bg-surface);
+
             border: 1px solid var(--border-ui);
-            border-radius: 12px;
+            border-radius: 14px;
+
             padding: 35px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.65);
+
             position: relative;
+            overflow: hidden;
         }
-        
+
         .glowing-logo-bg {
             position: absolute;
-            top: 40px;
+
+            top: 25px;
             left: 50%;
+
             transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0) 70%);
+
+            width: 130px;
+            height: 130px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(59, 130, 246, 0.35) 0%,
+                    rgba(59, 130, 246, 0) 70%
+                );
+
             border-radius: 50%;
+
             z-index: 1;
             pointer-events: none;
         }
-        
+
         .org-header {
             text-align: center;
+
             margin-bottom: 30px;
+            padding-bottom: 25px;
+
             border-bottom: 1px solid var(--border-ui);
-            padding-bottom: 20px;
+
             position: relative;
             z-index: 2;
         }
-        
+
         .header-logo-container {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 10px;
+            width: 72px;
+            height: 72px;
+
+            margin: 0 auto 14px;
+
             background: #1e1e24;
+
             border: 2px solid var(--brand-primary);
             border-radius: 50%;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+
+            overflow: hidden;
+
+            box-shadow:
+                0 0 22px rgba(59, 130, 246, 0.35);
         }
 
-        h1 { font-size: 1.6rem; margin: 12px 0 6px; font-weight: 800; }
-        .subtitle { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .header-logo-container img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #ffffff;
+
+            font-size: 1.5rem;
+            line-height: 1.25;
+
+            margin: 15px 0 6px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sec-number {
+            color: var(--brand-primary);
+
+            font-size: 0.85rem;
+
+            font-weight: bold;
+
+            margin: 5px 0 0;
+
+            letter-spacing: 1px;
+
+            font-family:
+                "Courier New",
+                monospace;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+
+            font-size: 0.9rem;
+            line-height: 1.5;
+
+            margin-top: 10px;
+        }
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(0, 1fr);
+
+            gap: 15px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
         .section-divider {
             grid-column: span 2;
-            font-size: 0.85rem;
+
+            font-size: 0.82rem;
+
             color: var(--brand-primary);
+
             text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 800;
+
             letter-spacing: 1px;
+
             border-bottom: 1px solid #2d2d3a;
-            padding-bottom: 5px;
-            margin: 15px 0 5px;
+
+            padding-bottom: 7px;
+            margin: 18px 0 5px;
         }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .full-width { grid-column: span 2; }
-        .field-group { display: flex; flex-direction: column; margin-bottom: 15px; }
-        label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
-        .req-star { color: #ef4444; margin-left: 2px; }
-        input, select, textarea {
-            padding: 12px;
-            background: #0a0a0c;
-            border: 1px solid var(--border-ui);
-            border-radius: 6px;
-            color: #fff;
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+
+            margin-bottom: 5px;
+            min-width: 0;
+        }
+
+        label {
+            color: var(--text-muted);
+
+            font-size: 0.75rem;
+
+            margin-bottom: 7px;
+
+            text-transform: uppercase;
+
+            font-weight: 700;
+            letter-spacing: 0.5px;
+
+            line-height: 1.35;
+        }
+
+        .req-star {
+            color: var(--brand-danger);
+
+            margin-left: 2px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 12px 13px;
+
+            background: var(--bg-input);
+
+            border:
+                1px solid
+                var(--border-ui);
+
+            border-radius: 7px;
+
+            color: #ffffff;
+
+            font-family: inherit;
             font-size: 0.95rem;
-            box-sizing: border-box;
-            transition: border-color 0.2s;
+
+            transition:
+                border-color 0.2s,
+                box-shadow 0.2s,
+                background 0.2s;
         }
-        input:focus, select:focus, textarea:focus { border-color: var(--brand-primary); outline: none; }
-        input:disabled { background: #16161c; color: var(--text-muted); cursor: not-allowed; }
-        textarea { resize: vertical; min-height: 60px; }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #666672;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color:
+                var(--brand-primary);
+
+            outline: none;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(59, 130, 246, 0.12);
+        }
+
+        input:disabled,
+        input[readonly] {
+            background: #16161c;
+            color: var(--text-muted);
+
+            cursor: not-allowed;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .helper-text {
+            color: #73737f;
+
+            font-size: 0.73rem;
+
+            margin-top: 6px;
+
+            line-height: 1.4;
+        }
+
+        .privacy-box {
+            grid-column: span 2;
+
+            margin-top: 15px;
+
+            padding: 15px;
+
+            border:
+                1px solid
+                var(--border-ui);
+
+            border-radius: 8px;
+
+            background: #0d0d11;
+        }
+
+        .privacy-row {
+            display: flex;
+            align-items: flex-start;
+
+            gap: 10px;
+        }
+
+        .privacy-row input {
+            width: auto;
+
+            margin-top: 4px;
+
+            cursor: pointer;
+        }
+
+        .privacy-row label {
+            text-transform: none;
+
+            font-size: 0.79rem;
+            font-weight: 500;
+            line-height: 1.55;
+
+            color: #b4b4bd;
+
+            cursor: pointer;
+
+            margin: 0;
+        }
+
+        .privacy-title {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
         .submit-btn {
             width: 100%;
-            background: var(--brand-primary);
-            color: #fff;
+
+            background:
+                var(--brand-primary);
+
+            color: #ffffff;
+
             border: none;
-            padding: 14px;
+
+            padding: 15px;
+
             font-size: 1rem;
-            font-weight: bold;
-            border-radius: 6px;
+
+            font-weight: 800;
+
+            border-radius: 7px;
+
             cursor: pointer;
-            margin-top: 15px;
-            transition: background 0.2s;
+
+            margin-top: 22px;
+
+            transition:
+                background 0.2s,
+                transform 0.15s,
+                opacity 0.2s;
         }
-        .submit-btn:hover { background: #2563eb; }
-        
-        /* 📸 High-Visibility Screenshot Receipt Interface Card Styles */
+
+        .submit-btn:hover:not(:disabled) {
+            background:
+                var(--brand-primary-hover);
+
+            transform:
+                translateY(-1px);
+        }
+
+        .submit-btn:disabled {
+            cursor: not-allowed;
+
+            opacity: 0.6;
+        }
+
+        .form-message {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .form-message.error {
+            display: block;
+
+            background:
+                rgba(239, 68, 68, 0.08);
+
+            border:
+                1px solid
+                rgba(239, 68, 68, 0.3);
+
+            color: #fca5a5;
+        }
+
+        .form-message.info {
+            display: block;
+
+            background:
+                rgba(59, 130, 246, 0.08);
+
+            border:
+                1px solid
+                rgba(59, 130, 246, 0.3);
+
+            color: #93c5fd;
+        }
+
+        /* ============================
+           RECEIPT / DATABASE TRACE
+        ============================ */
+
         .database-trace {
             display: none;
+
             background: #141b18;
-            border: 2px solid var(--brand-success);
+
+            border:
+                2px solid
+                var(--brand-success);
+
             padding: 25px;
-            border-radius: 8px;
+
+            border-radius: 9px;
+
             font-size: 0.9rem;
+
             margin-top: 30px;
+
             line-height: 1.6;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+
+            box-shadow:
+                0 0 20px
+                rgba(16, 185, 129, 0.1);
         }
-        .screenshot-notice {
-            background: rgba(16, 185, 129, 0.1);
+
+        .database-trace.visible {
+            display: block;
+        }
+
+        .success-title {
             color: var(--brand-success);
-            padding: 10px;
-            border-radius: 6px;
+
+            font-size: 1.2rem;
+
+            font-weight: 800;
+
             text-align: center;
-            font-weight: bold;
-            margin-bottom: 15px;
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            font-size: 0.85rem;
+
+            margin-bottom: 5px;
         }
+
+        .success-subtitle {
+            color: #95a89f;
+
+            text-align: center;
+
+            font-size: 0.82rem;
+
+            margin-bottom: 18px;
+        }
+
+        .screenshot-notice {
+            background:
+                rgba(16, 185, 129, 0.1);
+
+            color:
+                var(--brand-success);
+
+            padding: 10px;
+
+            border-radius: 6px;
+
+            text-align: center;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+            border:
+                1px solid
+                rgba(16, 185, 129, 0.2);
+
+            font-size: 0.82rem;
+        }
+
         .receipt-row {
             display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid #1f2924;
+
+            justify-content:
+                space-between;
+
+            gap: 20px;
+
+            padding: 7px 0;
+
+            border-bottom:
+                1px solid #1f2924;
         }
-        .receipt-label { color: #8fa399; font-family: monospace; }
-        .receipt-value { color: #ffffff; font-weight: 500; }
-        .reference-token {
-            font-size: 1.4rem;
+
+        .receipt-label {
+            color: #8fa399;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            flex-shrink: 0;
+        }
+
+        .receipt-value {
             color: #ffffff;
-            background: #0d110f;
-            padding: 10px;
-            border-radius: 6px;
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            letter-spacing: 2px;
-            border: 1px dashed var(--brand-success);
-            margin: 15px 0;
+
+            font-weight: 600;
+
+            text-align: right;
+
+            word-break: break-word;
         }
+
+        .reference-label {
+            text-align: center;
+
+            color: #90a29a;
+
+            margin-top: 18px;
+
+            font-size: 0.76rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .reference-token {
+            font-size: 1.25rem;
+
+            color: #ffffff;
+
+            background: #0d110f;
+
+            padding: 12px;
+
+            border-radius: 6px;
+
+            text-align: center;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            border:
+                1px dashed
+                var(--brand-success);
+
+            margin: 7px 0 15px;
+
+            word-break: break-word;
+        }
+
         .motto-banner {
             text-align: center;
+
             margin-top: 20px;
             padding-top: 15px;
-            border-top: 1px dashed #1f2924;
+
+            border-top:
+                1px dashed #1f2924;
+
             font-style: italic;
+
             color: #a3b8ad;
+
             font-weight: 600;
         }
-        .flag-icon { display: block; font-size: 1.4rem; margin-top: 5px; }
+
+        .flag-icon {
+            display: block;
+
+            font-size: 1.4rem;
+
+            margin-top: 5px;
+        }
+
+        .new-registration-btn {
+            width: 100%;
+
+            padding: 12px;
+
+            background: transparent;
+
+            color: var(--brand-success);
+
+            border:
+                1px solid
+                var(--brand-success);
+
+            border-radius: 6px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            margin-top: 18px;
+        }
+
+        .new-registration-btn:hover {
+            background:
+                rgba(16, 185, 129, 0.08);
+        }
+
+        .security-note {
+            margin-top: 25px;
+
+            color: #696974;
+
+            font-size: 0.72rem;
+
+            text-align: center;
+
+            line-height: 1.5;
+        }
+
+        /* ============================
+           MOBILE RESPONSIVENESS
+        ============================ */
+
+        @media (max-width: 650px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .registration-card {
+                padding: 25px 18px;
+
+                border-radius: 10px;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width,
+            .section-divider,
+            .privacy-box {
+                grid-column: span 1;
+            }
+
+            .receipt-row {
+                flex-direction: column;
+
+                gap: 2px;
+            }
+
+            .receipt-value {
+                text-align: left;
+            }
+
+            .reference-token {
+                font-size: 1rem;
+
+                letter-spacing: 1px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
 <div class="registration-card">
+
     <div class="glowing-logo-bg"></div>
-    
-    <div class="org-header">
+
+    <header class="org-header">
+
         <div class="header-logo-container">
-            <img src="../logo.png" alt="Organization Logo" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            <img
+                src="../logo.png"
+                alt="United GUARDIANS Wing Worldwide Inc. Logo"
+                onerror="this.style.display='none';"
+            >
         </div>
-        <h1 style="color: #ffffff; font-size: 1.5rem; margin-top: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">United GUARDIANS Wing Worldwide Inc.</h1>
-        <p style="color: #3b82f6; font-size: 0.85rem; font-weight: bold; margin: 5px 0 0; letter-spacing: 1px; font-family: monospace;">SEC REG. NO. 2024120180352-00</p>
-        <p class="subtitle" style="margin-top: 10px;">Secure Operational Network Intake Form Matrix</p>
+
+        <h1>
+            United GUARDIANS Wing Worldwide Inc.
+        </h1>
+
+        <p class="sec-number">
+            SEC REG. NO. 2024120180352-00
+        </p>
+
+        <p class="subtitle">
+            Secure Operational Network Intake Form Matrix
+        </p>
+
+    </header>
+
+    <!-- =====================================
+         REGISTRATION FORM
+    ====================================== -->
+
+    <form
+        id="registration-form"
+        autocomplete="off"
+        novalidate
+    >
+
+        <div class="form-grid">
+
+            <!-- MUNICIPAL ROUTING -->
+
+            <div class="field-group full-width">
+
+                <label for="reg-municipality">
+                    Target Sorting Municipality
+                    <span class="req-star">*</span>
+                </label>
+
+                <select
+                    id="reg-municipality"
+                    name="municipality"
+                    required
+                >
+                    <option
+                        value=""
+                        disabled
+                        selected
+                    >
+                        -- Select Municipality --
+                    </option>
+
+                    <option value="Impasugong">
+                        Impasugong Queue
+                    </option>
+
+                    <option value="Sumilao">
+                        Sumilao Queue
+                    </option>
+
+                    <option value="Mis.Or.">
+                        Mis.Or. Queue
+                    </option>
+
+                </select>
+
+                <small class="helper-text">
+                    Your selection determines which authorized worksheet receives the registration.
+                </small>
+
+            </div>
+
+            <!-- PRIMARY DETAILS -->
+
+            <div class="section-divider">
+                Registrant Primary Details
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-fname">
+                    First Name
+                    <span class="req-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="reg-fname"
+                    name="firstName"
+                    placeholder="Given name"
+                    maxlength="60"
+                    required
+                >
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-mname">
+                    Middle Name
+                </label>
+
+                <input
+                    type="text"
+                    id="reg-mname"
+                    name="middleName"
+                    placeholder="Middle name / initial"
+                    maxlength="60"
+                >
+
+            </div>
+
+            <div class="field-group full-width">
+
+                <label for="reg-sname">
+                    Surname / Last Name
+                    <span class="req-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="reg-sname"
+                    name="surname"
+                    placeholder="Family surname"
+                    maxlength="60"
+                    required
+                >
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-alias">
+                    Pseudonym / Alias / Call Sign
+                    <span class="req-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="reg-alias"
+                    name="alias"
+                    placeholder="Organizational alias"
+                    maxlength="50"
+                    required
+                >
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-rank">
+                    Rank / Position
+                    <span class="req-star">*</span>
+                </label>
+
+                <select
+                    id="reg-rank"
+                    name="rank"
+                    required
+                >
+
+                    <option
+                        value=""
+                        disabled
+                        selected
+                    >
+                        -- Select Current Rank --
+                    </option>
+
+                    <option value="Founder">
+                        Founder
+                    </option>
+
+                    <option value="National President">
+                        National President
+                    </option>
+
+                    <option value="Regional Director">
+                        Regional Director
+                    </option>
+
+                    <option value="Province Officer">
+                        Province Officer
+                    </option>
+
+                    <option value="Chapter President">
+                        Chapter President
+                    </option>
+
+                    <option value="Guardian Member">
+                        Guardian Member
+                    </option>
+
+                    <option value="Prospect / Applicant">
+                        Prospect / Applicant
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field-group full-width">
+
+                <label for="reg-wing">
+                    Official Chapter / Wing Name Affiliation
+                    <span class="req-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="reg-wing"
+                    name="chapter"
+                    placeholder="Example: Bukidnon Provincial Chapter"
+                    maxlength="100"
+                    required
+                >
+
+            </div>
+
+            <!-- PERSONAL INFORMATION -->
+
+            <div class="section-divider">
+                Personal Information
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-dob">
+                    Date of Birth
+                    <span class="req-star">*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="reg-dob"
+                    name="dateOfBirth"
+                    required
+                >
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-age">
+                    Calculated Age
+                </label>
+
+                <input
+                    type="number"
+                    id="reg-age"
+                    name="age"
+                    placeholder="Auto-calculated"
+                    readonly
+                >
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-status">
+                    Civil Status
+                    <span class="req-star">*</span>
+                </label>
+
+                <select
+                    id="reg-status"
+                    name="civilStatus"
+                    required
+                >
+
+                    <option
+                        value=""
+                        disabled
+                        selected
+                    >
+                        -- Select Status --
+                    </option>
+
+                    <option value="Single">
+                        Single
+                    </option>
+
+                    <option value="Married">
+                        Married
+                    </option>
+
+                    <option value="Widowed">
+                        Widowed
+                    </option>
+
+                    <option value="Separated">
+                        Separated
+                    </option>
+
+                    <option value="Prefer not to say">
+                        Prefer not to say
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-gender">
+                    Gender
+                </label>
+
+                <select
+                    id="reg-gender"
+                    name="gender"
+                >
+
+                    <option value="">
+                        -- Optional --
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Prefer not to say">
+                        Prefer not to say
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="section-divider">
+                Contact Information
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-phone">
+                    Mobile Number
+                    <span class="req-star">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="reg-phone"
+                    name="phone"
+                    placeholder="09XXXXXXXXX"
+                    maxlength="15"
+                    inputmode="tel"
+                    required
+                >
+
+            </div>
+
+            <div class="field-group">
+
+                <label for="reg-email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="reg-email"
+                    name="email"
+                    placeholder="example@email.com"
+                    maxlength="120"
+                >
+
+            </div>
+
+            <div class="field-group full-width">
+
+                <label for="reg-address">
+                    Complete Residential Address
+                    <span class="req-star">*</span>
+                </label>
+
+                <textarea
+                    id="reg-address"
+                    name="address"
+                    placeholder="House / Street / Barangay / Municipality / Province"
+                    maxlength="300"
+                    required
+                ></textarea>
+
+            </div>
+
+            <!-- OPTIONAL DETAILS -->
+
+            <div class="section-divider">
+                Additional Information
+            </div>
+
+            <div class="field-group full-width">
+
+                <label for="reg-notes">
+                    Additional Notes
+                </label>
+
+                <textarea
+                    id="reg-notes"
+                    name="notes"
+                    placeholder="Optional notes or additional organizational information"
+                    maxlength="500"
+                ></textarea>
+
+            </div>
+
+            <!-- PRIVACY CONSENT -->
+
+            <div class="privacy-box">
+
+                <div class="privacy-row">
+
+                    <input
+                        type="checkbox"
+                        id="privacy-consent"
+                        required
+                    >
+
+                    <label for="privacy-consent">
+
+                        <span class="privacy-title">
+                            Data Privacy Consent:
+                        </span>
+
+                        I confirm that the information provided is accurate and voluntarily submitted for legitimate organizational registration, verification, record management, and authorized internal administrative purposes. I understand that access to this information should be restricted to authorized personnel.
+
+                        <span class="req-star">*</span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button
+            type="submit"
+            class="submit-btn"
+            id="submit-btn"
+        >
+            Submit Official Registration
+        </button>
+
+        <div
+            id="form-message"
+            class="form-message"
+            role="alert"
+            aria-live="polite"
+        ></div>
+
+    </form>
+
+    <!-- =====================================
+         SUCCESS RECEIPT
+    ====================================== -->
+
+    <section
+        id="database-trace"
+        class="database-trace"
+        aria-live="polite"
+    >
+
+        <div class="success-title">
+            ✓ REGISTRATION RECORDED
+        </div>
+
+        <div class="success-subtitle">
+            Official Network Registration Receipt
+        </div>
+
+        <div class="screenshot-notice">
+            📸 You may screenshot this receipt for your reference.
+        </div>
+
+        <div class="receipt-row">
+
+            <span class="receipt-label">
+                NAME
+            </span>
+
+            <span
+                id="receipt-name"
+                class="receipt-value"
+            >
+                —
+            </span>
+
+        </div>
+
+        <div class="receipt-row">
+
+            <span class="receipt-label">
+                ALIAS
+            </span>
+
+            <span
+                id="receipt-alias"
+                class="receipt-value"
+            >
+                —
+            </span>
+
+        </div>
+
+        <div class="receipt-row">
+
+            <span class="receipt-label">
+                RANK
+            </span>
+
+            <span
+                id="receipt-rank"
+                class="receipt-value"
+            >
+                —
+            </span>
+
+        </div>
+
+        <div class="receipt-row">
+
+            <span class="receipt-label">
+                CHAPTER
+            </span>
+
+            <span
+                id="receipt-chapter"
+                class="receipt-value"
+            >
+                —
+            </span>
+
+        </div>
+
+        <div class="receipt-row">
+
+            <span class="receipt-label">
+                MUNICIPALITY
+            </span>
+
+            <span
+                id="receipt-municipality"
+                class="receipt-value"
+            >
+                —
+            </span>
+
+        </div>
+
+        <div class="receipt-row">
+
+            <span class="receipt-label">
+                SUBMITTED
+            </span>
+
+            <span
+                id="receipt-date"
+                class="receipt-value"
+            >
+                —
+            </span>
+
+        </div>
+
+        <div class="reference-label">
+            Registration Reference Number
+        </div>
+
+        <div
+            id="reference-token"
+            class="reference-token"
+        >
+            —
+        </div>
+
+        <div class="motto-banner">
+            United GUARDIANS Wing Worldwide Inc.
+            <span class="flag-icon">
+                🇵🇭
+            </span>
+        </div>
+
+        <button
+            type="button"
+            id="new-registration-btn"
+            class="new-registration-btn"
+        >
+            + Start New Registration
+        </button>
+
+    </section>
+
+    <div class="security-note">
+        Personal information submitted through this portal should only be stored in a restricted-access system and accessed by authorized organizational personnel.
     </div>
 
-    <form id="registration-form" autocomplete="off">
-        <div class="form-grid">
-            
-            <!-- 🗺️ MUNICIPAL ROUTING SELECTION -->
-            <div class="field-group full-width">
-                <label for="reg-municipality">Target Sorting Municipality (Spreadsheet Sheet Tab Segregation)</label>
-                <select id="reg-municipality" required>
-                    <option value="" disabled selected>-- Select Target Municipality to Route Data --</option>
-                    <option value="Impasugong">Impasugong Queue</option>
-                    <option value="Sumilao">Sumilao Queue</option>
-                    <option value="Mis.Or.">Mis.Or. Queue</option>
-                </select>
-            </div>
+</div>
 
-            <div class="section-divider">Registrant Primary Details</div>
 
-            <!-- 👤 FULL NAME GROUP SPLIT -->
-            <div class="field-group">
-                <label for="reg-fname">First Name<span class="req-star">*</span></label>
-                <input type="text" id="reg-fname" placeholder="Given name" required>
-            </div>
+<script>
+    /*
+    ==========================================================
+    GOOGLE APPS SCRIPT CONFIGURATION
+    ==========================================================
 
-            <div class="field-group">
-                <label for="reg-mname">Middle Name<span class="req-star">*</span></label>
-                <input type="text" id="reg-mname" placeholder="Middle name input" required>
-            </div>
+    Add your deployed Google Apps Script Web App URL below.
 
-            <div class="field-group full-width">
-                <label for="reg-sname">Surname / Last Name<span class="req-star">*</span></label>
-                <input type="text" id="reg-sname" placeholder="Family surname" required>
-            </div>
+    Example:
+    const APPS_SCRIPT_URL =
+        "https://script.google.com/macros/s/XXXXXXXXXXXX/exec";
 
-            <!-- 📱 CORE ACCESS IDENTIFIERS -->
-            <div class="field-group">
-                <label for="reg-alias">Pseudonym / Alias / Call Sign<span class="req-star">*</span></label>
-                <input type="text" id="reg-alias" placeholder="Organizational Alias" required>
-            </div>
+    IMPORTANT:
+    Do NOT place a public Google Sheet URL here.
 
-            <div class="field-group">
-                <label for="reg-rank">Rank / Position inside Organization</label>
-                <select id="reg-rank" required>
-                    <option value="" disabled selected>-- Select Current Rank --</option>
-                    <option value="Founder">Founder</option>
-                    <option value="National President">National President</option>
-                    <option value="Regional Director">Regional Director</option>
-                    <option value="Province Officer">Province Officer</option>
-                    <option value="Chapter President">Chapter President</option>
-                    <option value="Guardian Member">Guardian Member</option>
-                    <option value="Prospect / Applicant">Prospect / Applicant</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
+    If this remains blank, the page will run in DEMO MODE.
+    ==========================================================
+    */
 
-            <div class="field-group full-width">
-                <label for="reg-wing">Official Chapter / Wing Name affiliation<span class="req-star">*</span></label>
+    const APPS_SCRIPT_URL = "";
+
+
+    /*
+    ==========================================================
+    ELEMENT REFERENCES
+    ==========================================================
+    */
+
+    const form =
+        document.getElementById("registration-form");
+
+    const submitButton =
+        document.getElementById("submit-btn");
+
+    const formMessage =
+        document.getElementById("form-message");
+
+    const dobInput =
+        document.getElementById("reg-dob");
+
+    const ageInput =
+        document.getElementById("reg-age");
+
+    const receipt =
+        document.getElementById("database-trace");
+
+    const newRegistrationButton =
+        document.getElementById("new-registration-btn");
+
+
+    /*
+    ==========================================================
+    PREVENT FUTURE DATE OF BIRTH
+    ==========================================================
+    */
+
+    const today =
+        new Date();
+
+    const maxDOB =
+        today.toISOString().split("T")[0];
+
+    dobInput.max = maxDOB;
+
+
+    /*
+    ==========================================================
+    AGE CALCULATION
+    ==========================================================
+    */
+
+    function calculateAge(dateOfBirth) {
+
+        if (!dateOfBirth) {
+            return "";
+        }
+
+        const birthDate =
+            new Date(dateOfBirth + "T00:00:00");
+
+        const currentDate =
+            new Date();
+
+        let age =
+            currentDate.getFullYear()
+            - birthDate.getFullYear();
+
+        const monthDifference =
+            currentDate.getMonth()
+            - birthDate.getMonth();
+
+        if (
+            monthDifference < 0 ||
+            (
+                monthDifference === 0 &&
+                currentDate.getDate() <
+                birthDate.getDate()
+            )
+        ) {
+            age--;
+        }
+
+        if (
+            age < 0 ||
+            age > 120
+        ) {
+            return "";
+        }
+
+        return age;
+    }
+
+
+    dobInput.addEventListener(
+        "change",
+        function () {
+
+            ageInput.value =
+                calculateAge(this.value);
+
+        }
+    );
+
+
+    /*
+    ==========================================================
+    CLEAN USER INPUT
+    ==========================================================
+    */
+
+    function cleanText(value) {
+
+        return String(value || "")
+            .trim()
+            .replace(/\s+/g, " ");
+
+    }
+
+
+    /*
+    ==========================================================
+    REFERENCE NUMBER
+    ==========================================================
+    */
+
+    function generateReferenceNumber() {
+
+        const date =
+            new Date();
+
+        const year =
+            date.getFullYear();
+
+        const month =
+            String(
+                date.getMonth() + 1
+            ).padStart(2, "0");
+
+        const day =
+            String(
+                date.getDate()
+            ).padStart(2, "0");
+
+        const randomNumber =
+            Math.floor(
+                100000 +
+                Math.random() * 900000
+            );
+
+        return (
+            "UGWWI-" +
+            year +
+            month +
+            day +
+            "-" +
+            randomNumber
+        );
+    }
+
+
+    /*
+    ==========================================================
+    FORM VALIDATION
+    ==========================================================
+    */
+
+    function validateRegistration(data) {
+
+        if (
+            !data.municipality ||
+            !data.firstName ||
+            !data.surname ||
+            !data.alias ||
+            !data.rank ||
+            !data.chapter ||
+            !data.dateOfBirth ||
+            !data.civilStatus ||
+            !data.phone ||
+            !data.address
+        ) {
+            return "Please complete all required fields.";
+        }
+
+
+        if (
+            !data.age ||
+            data.age < 1 ||
+            data.age > 120
+        ) {
+            return "Please enter a valid date of birth.";
+        }
+
+
+        const phonePattern =
+            /^[0-9+\-\s()]{7,20}$/;
+
+        if (
+            !phonePattern.test(data.phone)
+        ) {
+            return "Please enter a valid mobile number.";
+        }
+
+
+        if (data.email) {
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (
+                !emailPattern.test(
+                    data.email
+                )
+            ) {
+                return "Please enter a valid email address.";
+            }
+        }
+
+
+        if (
+            !document
+                .getElementById(
+                    "privacy-consent"
+                )
+                .checked
+        ) {
+            return "You must agree to the data privacy consent before submitting.";
+        }
+
+
+        return null;
+    }
+
+
+    /*
+    ==========================================================
+    BUILD DATA PAYLOAD
+    ==========================================================
+    */
+
+    function getFormPayload() {
+
+        const firstName =
+            cleanText(
+                document.getElementById(
+                    "reg-fname"
+                ).value
+            );
+
+        const middleName =
+            cleanText(
+                document.getElementById(
+                    "reg-mname"
+                ).value
+            );
+
+        const surname =
+            cleanText(
+                document.getElementById(
+                    "reg-sname"
+                ).value
+            );
+
+
+        const fullName =
+            [
+                firstName,
+                middleName,
+                surname
+            ]
+            .filter(Boolean)
+            .join(" ");
+
+
+        return {
+
+            municipality:
+                document.getElementById(
+                    "reg-municipality"
+                ).value,
+
+            firstName:
+                firstName,
+
+            middleName:
+                middleName,
+
+            surname:
+                surname,
+
+            fullName:
+                fullName,
+
+            alias:
+                cleanText(
+                    document.getElementById(
+                        "reg-alias"
+                    ).value
+                ),
+
+            rank:
+                document.getElementById(
+                    "reg-rank"
+                ).value,
+
+            chapter:
+                cleanText(
+                    document.getElementById(
+                        "reg-wing"
+                    ).value
+                ),
+
+            dateOfBirth:
+                document.getElementById(
+                    "reg-dob"
+                ).value,
+
+            age:
+                Number(
+                    document.getElementById(
+                        "reg-age"
+                    ).value
+                ),
+
+            civilStatus:
+                document.getElementById(
+                    "reg-status"
+                ).value,
+
+            gender:
+                document.getElementById(
+                    "reg-gender"
+                ).value,
+
+            phone:
+                cleanText(
+                    document.getElementById(
+                        "reg-phone"
+                    ).value
+                ),
+
+            email:
+                cleanText(
+                    document.getElementById(
+                        "reg-email"
+                    ).value
+                ),
+
+            address:
+                cleanText(
+                    document.getElementById(
+                        "reg-address"
+                    ).value
+                ),
+
+            notes:
+                cleanText(
+                    document.getElementById(
+                        "reg-notes"
+                    ).value
+                ),
+
+            privacyConsent:
+                true,
+
+            submittedAt:
+                new Date().toISOString(),
+
+            referenceNumber:
+                generateReferenceNumber()
+        };
+    }
+
+
+    /*
+    ==========================================================
+    DISPLAY MESSAGE
+    ==========================================================
+    */
+
+    function showMessage(
+        message,
+        type = "error"
+    ) {
+
+        formMessage.textContent =
+            message;
+
+        formMessage.className =
+            "form-message " + type;
+
+    }
+
+
+    function clearMessage() {
+
+        formMessage.textContent = "";
+
+        formMessage.className =
+            "form-message";
+
+    }
+
+
+    /*
+    ==========================================================
+    DISPLAY RECEIPT
+    ==========================================================
+    */
+
+    function showReceipt(data) {
+
+        document.getElementById(
+            "receipt-name"
+        ).textContent =
+            data.fullName;
+
+
+        document.getElementById(
+            "receipt-alias"
+        ).textContent =
+            data.alias;
+
+
+        document.getElementById(
+            "receipt-rank"
+        ).textContent =
+            data.rank;
+
+
+        document.getElementById(
+            "receipt-chapter"
+        ).textContent =
+            data.chapter;
+
+
+        document.getElementById(
+            "receipt-municipality"
+        ).textContent =
+            data.municipality;
+
+
+        document.getElementById(
+            "receipt-date"
+        ).textContent =
+            new Date().toLocaleString(
+                "en-PH",
+                {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                    hour: "numeric",
+                    minute: "2-digit"
+                }
+            );
+
+
+        document.getElementById(
+            "reference-token"
+        ).textContent =
+            data.referenceNumber;
+
+
+        receipt.classList.add(
+            "visible"
+        );
+
+
+        form.style.display =
+            "none";
+
+
+        receipt.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+
+    /*
+    ==========================================================
+    SEND TO GOOGLE APPS SCRIPT
+    ==========================================================
+    */
+
+    async function submitToGoogleSheets(data) {
+
+        /*
+        DEMO MODE
+
+        If no Apps Script URL is configured,
+        simulate successful processing.
+        */
+
+        if (!APPS_SCRIPT_URL) {
+
+            await new Promise(
+                resolve =>
+                    setTimeout(resolve, 700)
+            );
+
+            return {
+                success: true,
+                demoMode: true
+            };
+        }
+
+
+        const response =
+            await fetch(
+                APPS_SCRIPT_URL,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify(data)
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Server returned HTTP " +
+                response.status
+            );
+        }
+
+
+        const responseText =
+            await response.text();
+
+
+        try {
+
+            return JSON.parse(
+                responseText
+            );
+
+        } catch {
+
+            return {
+                success: true
+            };
+
+        }
+
+    }
+
+
+    /*
+    ==========================================================
+    FORM SUBMISSION
+    ==========================================================
+    */
+
+    form.addEventListener(
+        "submit",
+        async function (event) {
+
+            event.preventDefault();
+
+            clearMessage();
+
+
+            /*
+            Trigger native required-field validation.
+            */
+
+            if (!form.checkValidity()) {
+
+                form.reportValidity();
+
+                return;
+            }
+
+
+            const data =
+                getFormPayload();
+
+
+            const validationError =
+                validateRegistration(data);
+
+
+            if (validationError) {
+
+                showMessage(
+                    validationError,
+                    "error"
+                );
+
+                return;
+            }
+
+
+            submitButton.disabled = true;
+
+            submitButton.textContent =
+                "Processing Registration...";
+
+
+            try {
+
+                const result =
+                    await submitToGoogleSheets(
+                        data
+                    );
+
+
+                if (
+                    result &&
+                    result.success === false
+                ) {
+
+                    throw new Error(
+                        result.message ||
+                        "Registration could not be completed."
+                    );
+
+                }
+
+
+                showReceipt(data);
+
+
+            } catch (error) {
+
+                console.error(
+                    "Registration error:",
+                    error
+                );
+
+
+                showMessage(
+                    "Registration could not be submitted. Please verify your connection or contact the authorized administrator.",
+                    "error"
+                );
+
+
+            } finally {
+
+                submitButton.disabled =
+                    false;
+
+                submitButton.textContent =
+                    "Submit Official Registration";
+
+            }
+
+        }
+    );
+
+
+    /*
+    ==========================================================
+    START NEW REGISTRATION
+    ==========================================================
+    */
+
+    newRegistrationButton.addEventListener(
+        "click",
+        function () {
+
+            form.reset();
+
+            ageInput.value = "";
+
+            clearMessage();
+
+            receipt.classList.remove(
+                "visible"
+            );
+
+            form.style.display =
+                "block";
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
