@@ -2381,6 +2381,18 @@ async function getFormPayload() {
 
             try {
 
+                    // Extract base64 image data from preview if a photo was selected
+    if (photoInput.files && photoInput.files[0]) {
+      const previewSrc = photoPreview.src;
+      if (previewSrc && previewSrc.startsWith("data:")) {
+        const commaIndex = previewSrc.indexOf(",");
+        data.photo = {
+          base64: previewSrc.substring(commaIndex + 1),
+          contentType: previewSrc.substring(previewSrc.indexOf(":") + 1, previewSrc.indexOf(";"))
+        };
+      }
+    }
+
                 const result =
                     await submitToGoogleSheets(
                         data
