@@ -2132,7 +2132,7 @@
 
 
     /* =========================================================
-       GOOGLE APPS SCRIPT SUBMISSION
+       GOOGLE APPS SCRIPT SUBMISSION (SERVER-SIDE REF NUMBER)
        ========================================================= */
 
     async function submitToGoogleSheets(
@@ -2146,7 +2146,7 @@
          * the page simulates successful processing.
          */
 
-        if (!APPS_SCRIPT_URL) {
+        if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
 
             await new Promise(
                 resolve =>
@@ -2156,10 +2156,11 @@
                     )
             );
 
-
+            // Mocking a server-generated official reference number for testing
             return {
                 success: true,
-                demoMode: true
+                demoMode: true,
+                referenceNumber: "REF-" + Math.floor(100000 + Math.random() * 900000)
             };
 
         }
@@ -2174,6 +2175,7 @@
                 APPS_SCRIPT_URL,
                 {
                     method: "POST",
+                    mode: "cors",
 
                     headers: {
                         "Content-Type":
@@ -2204,15 +2206,19 @@
 
         try {
 
-            return JSON.parse(
-                responseText
-            );
+            const result = JSON.parse(responseText);
+            
+            // Return the full JSON parsed object which includes the server's official reference number
+            return {
+                success: result.success || false,
+                referenceNumber: result.referenceNumber || null,
+                message: result.message || ""
+            };
 
         } catch {
 
-            return {
-                success: true
-            };
+            // Fallback error if the server didn't send clean JSON back
+            throw new Error("Invalid server response format. Expected reference number from server.");
 
         }
 
