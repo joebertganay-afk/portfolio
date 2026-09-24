@@ -2373,6 +2373,9 @@ async function getFormPayload() {
 
             const data =
                 getFormPayload();
+    data.emergencyName = document.getElementById("emergencyName").value.trim();
+    data.emergencyRelationship = document.getElementById("emergencyRelationship").value.trim();
+    data.emergencyPhone = document.getElementById("emergencyPhone").value.trim();
 
 
             const validationError =
@@ -2411,7 +2414,13 @@ async function getFormPayload() {
           base64: previewSrc.substring(commaIndex + 1),
           contentType: previewSrc.substring(previewSrc.indexOf(":") + 1, previewSrc.indexOf(";"))
         };
-      }
+                  } else {
+                data.photo = null;
+            
+        } else {
+            data.photo = null;
+        }
+
     }
 
                 const result =
