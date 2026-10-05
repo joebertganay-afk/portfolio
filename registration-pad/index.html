@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Official United GUARDIANS Wing Worldwide Inc. Registration Portal."
-    >
-
+    <meta name="description" content="Official United GUARDIANS Wing Worldwide Inc. Registration Portal.">
     <title>Official Network Registration Portal</title>
 
     <style>
@@ -40,74 +35,45 @@
         body {
             background-color: var(--bg-base);
             color: var(--text-heading);
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Arial,
-                sans-serif;
-
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
             margin: 0;
             padding: 40px 20px;
-
             display: flex;
             justify-content: center;
             align-items: flex-start;
-
             min-height: 100vh;
         }
 
         .registration-card {
             max-width: 700px;
             width: 100%;
-
             background: var(--bg-surface);
-
             border: 1px solid var(--border-ui);
             border-radius: 14px;
-
             padding: 35px;
-
-            box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.65);
-
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
             position: relative;
             overflow: hidden;
         }
 
         .glowing-logo-bg {
             position: absolute;
-
             top: 25px;
             left: 50%;
-
             transform: translateX(-50%);
-
             width: 130px;
             height: 130px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(59, 130, 246, 0.35) 0%,
-                    rgba(59, 130, 246, 0) 70%
-                );
-
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0) 70%);
             border-radius: 50%;
-
             z-index: 1;
             pointer-events: none;
         }
 
         .org-header {
             text-align: center;
-
             margin-bottom: 30px;
             padding-bottom: 25px;
-
             border-bottom: 1px solid var(--border-ui);
-
             position: relative;
             z-index: 2;
         }
@@ -115,22 +81,15 @@
         .header-logo-container {
             width: 72px;
             height: 72px;
-
             margin: 0 auto 14px;
-
             background: #1e1e24;
-
             border: 2px solid var(--brand-primary);
             border-radius: 50%;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             overflow: hidden;
-
-            box-shadow:
-                0 0 22px rgba(59, 130, 246, 0.35);
+            box-shadow: 0 0 22px rgba(59, 130, 246, 0.35);
         }
 
         .header-logo-container img {
@@ -142,48 +101,33 @@
 
         h1 {
             color: #ffffff;
-
             font-size: 1.5rem;
             line-height: 1.25;
-
             margin: 15px 0 6px;
-
             font-weight: 800;
-
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .sec-number {
             color: var(--brand-primary);
-
             font-size: 0.85rem;
-
             font-weight: bold;
-
             margin: 5px 0 0;
-
             letter-spacing: 1px;
-
             font-family: "Courier New", monospace;
         }
 
         .subtitle {
             color: var(--text-muted);
-
             font-size: 0.9rem;
             line-height: 1.5;
-
             margin-top: 10px;
         }
 
         .form-grid {
             display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr)
-                minmax(0, 1fr);
-
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             gap: 15px;
         }
 
@@ -193,18 +137,12 @@
 
         .section-divider {
             grid-column: span 2;
-
             font-size: 0.82rem;
-
             color: var(--brand-primary);
-
             text-transform: uppercase;
             font-weight: 800;
-
             letter-spacing: 1px;
-
             border-bottom: 1px solid #2d2d3a;
-
             padding-bottom: 7px;
             margin: 18px 0 5px;
         }
@@ -212,78 +150,51 @@
         .field-group {
             display: flex;
             flex-direction: column;
-
             margin-bottom: 5px;
             min-width: 0;
         }
 
         label {
             color: var(--text-muted);
-
             font-size: 0.75rem;
-
             margin-bottom: 7px;
-
             text-transform: uppercase;
-
             font-weight: 700;
             letter-spacing: 0.5px;
-
             line-height: 1.35;
         }
 
         .req-star {
             color: var(--brand-danger);
-
             margin-left: 2px;
             font-weight: bold;
         }
 
-        input,
-        select,
-        textarea {
+        input, select, textarea {
             width: 100%;
-
             padding: 12px 13px;
-
             background: var(--bg-input);
-
             border: 1px solid var(--border-ui);
             border-radius: 7px;
-
             color: #ffffff;
-
             font-family: inherit;
             font-size: 0.95rem;
-
-            transition:
-                border-color 0.2s,
-                box-shadow 0.2s,
-                background 0.2s;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
         }
 
-        input::placeholder,
-        textarea::placeholder {
+        input::placeholder, textarea::placeholder {
             color: #666672;
         }
 
-        input:focus,
-        select:focus,
-        textarea:focus {
+        input:focus, select:focus, textarea:focus {
             border-color: var(--brand-primary);
-
             outline: none;
-
-            box-shadow:
-                0 0 0 3px
-                rgba(59, 130, 246, 0.12);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
         }
 
-        input:disabled,
-        input[readonly] {
+        input:disabled, input[readonly] {
             background: #16161c;
             color: var(--text-muted);
-
             cursor: not-allowed;
         }
 
@@ -298,99 +209,67 @@
 
         .helper-text {
             color: #73737f;
-
             font-size: 0.73rem;
-
             margin-top: 6px;
-
             line-height: 1.4;
         }
 
-        /* PHOTO UPLOAD */
-
         .photo-upload-box {
             background: #0d0d11;
-
             border: 1px dashed #34343d;
-
             border-radius: 8px;
-
             padding: 15px;
         }
 
         .photo-preview-container {
             display: none;
-
             text-align: center;
-
             margin-top: 15px;
         }
 
         .photo-preview {
             width: 130px;
             height: 130px;
-
             object-fit: cover;
-
             border-radius: 8px;
-
-            border:
-                2px solid
-                var(--brand-primary);
-
-            box-shadow:
-                0 0 20px
-                rgba(59, 130, 246, 0.15);
+            border: 2px solid var(--brand-primary);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
         }
 
         .photo-preview-label {
             color: #73737f;
-
             font-size: 0.72rem;
-
             margin-top: 7px;
         }
 
         .privacy-box {
             grid-column: span 2;
-
             margin-top: 15px;
-
             padding: 15px;
-
             border: 1px solid var(--border-ui);
             border-radius: 8px;
-
             background: #0d0d11;
         }
 
         .privacy-row {
             display: flex;
             align-items: flex-start;
-
             gap: 10px;
         }
 
         .privacy-row input {
             width: auto;
-
             margin-top: 4px;
-
             cursor: pointer;
         }
 
         .privacy-row label {
             text-transform: none;
-
             font-size: 0.79rem;
             font-weight: 500;
-
             line-height: 1.55;
-
             color: #b4b4bd;
-
             cursor: pointer;
-
             margin: 0;
         }
 
@@ -401,34 +280,20 @@
 
         .submit-btn {
             width: 100%;
-
             background: var(--brand-primary);
-
             color: #ffffff;
-
             border: none;
-
             padding: 15px;
-
             font-size: 1rem;
-
             font-weight: 800;
-
             border-radius: 7px;
-
             cursor: pointer;
-
             margin-top: 22px;
-
-            transition:
-                background 0.2s,
-                transform 0.15s,
-                opacity 0.2s;
+            transition: background 0.2s, transform 0.15s, opacity 0.2s;
         }
 
         .submit-btn:hover:not(:disabled) {
             background: var(--brand-primary-hover);
-
             transform: translateY(-1px);
         }
 
@@ -439,68 +304,37 @@
 
         .form-message {
             display: none;
-
             margin-top: 15px;
-
             padding: 12px;
-
             border-radius: 7px;
-
             font-size: 0.85rem;
-
             line-height: 1.5;
         }
 
         .form-message.error {
             display: block;
-
-            background:
-                rgba(239, 68, 68, 0.08);
-
-            border:
-                1px solid
-                rgba(239, 68, 68, 0.3);
-
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.3);
             color: #fca5a5;
         }
 
         .form-message.info {
             display: block;
-
-            background:
-                rgba(59, 130, 246, 0.08);
-
-            border:
-                1px solid
-                rgba(59, 130, 246, 0.3);
-
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.3);
             color: #93c5fd;
         }
 
-        /* RECEIPT */
-
         .database-trace {
             display: none;
-
             background: #141b18;
-
-            border:
-                2px solid
-                var(--brand-success);
-
+            border: 2px solid var(--brand-success);
             padding: 25px;
-
             border-radius: 9px;
-
             font-size: 0.9rem;
-
             margin-top: 30px;
-
             line-height: 1.6;
-
-            box-shadow:
-                0 0 20px
-                rgba(16, 185, 129, 0.1);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
         }
 
         .database-trace.visible {
@@ -509,212 +343,131 @@
 
         .success-title {
             color: var(--brand-success);
-
             font-size: 1.2rem;
-
             font-weight: 800;
-
             text-align: center;
-
             margin-bottom: 5px;
         }
 
         .success-subtitle {
             color: #95a89f;
-
             text-align: center;
-
             font-size: 0.82rem;
-
             margin-bottom: 18px;
         }
 
         .screenshot-notice {
-            background:
-                rgba(16, 185, 129, 0.1);
-
+            background: rgba(16, 185, 129, 0.1);
             color: var(--brand-success);
-
             padding: 10px;
-
             border-radius: 6px;
-
             text-align: center;
-
             font-weight: bold;
-
             margin-bottom: 15px;
-
-            border:
-                1px solid
-                rgba(16, 185, 129, 0.2);
-
+            border: 1px solid rgba(16, 185, 129, 0.2);
             font-size: 0.82rem;
         }
 
         .receipt-row {
             display: flex;
-
             justify-content: space-between;
-
             gap: 20px;
-
             padding: 7px 0;
-
-            border-bottom:
-                1px solid #1f2924;
+            border-bottom: 1px solid #1f2924;
         }
 
         .receipt-label {
             color: #8fa399;
-
-            font-family:
-                "Courier New",
-                monospace;
-
+            font-family: "Courier New", monospace;
             flex-shrink: 0;
         }
 
         .receipt-value {
             color: #ffffff;
-
             font-weight: 600;
-
             text-align: right;
-
             word-break: break-word;
         }
 
         .reference-label {
             text-align: center;
-
             color: #90a29a;
-
             margin-top: 18px;
-
             font-size: 0.76rem;
-
             text-transform: uppercase;
-
             letter-spacing: 1px;
         }
 
         .reference-token {
             font-size: 1.25rem;
-
             color: #ffffff;
-
             background: #0d110f;
-
             padding: 12px;
-
             border-radius: 6px;
-
             text-align: center;
-
-            font-family:
-                "Courier New",
-                monospace;
-
+            font-family: "Courier New", monospace;
             font-weight: bold;
-
             letter-spacing: 2px;
-
-            border:
-                1px dashed
-                var(--brand-success);
-
+            border: 1px dashed var(--brand-success);
             margin: 7px 0 15px;
-
             word-break: break-word;
         }
 
         .photo-receipt-container {
             display: none;
-
             text-align: center;
-
             margin: 18px 0;
         }
 
         .photo-receipt {
             width: 130px;
             height: 130px;
-
             object-fit: cover;
-
             border-radius: 8px;
-
-            border:
-                2px solid
-                var(--brand-success);
+            border: 2px solid var(--brand-success);
         }
 
         .motto-banner {
             text-align: center;
-
             margin-top: 20px;
             padding-top: 15px;
-
-            border-top:
-                1px dashed #1f2924;
-
+            border-top: 1px dashed #1f2924;
             font-style: italic;
-
             color: #a3b8ad;
-
             font-weight: 600;
         }
 
         .flag-icon {
             display: block;
-
             font-size: 1.4rem;
-
             margin-top: 5px;
         }
 
         .new-registration-btn {
             width: 100%;
-
             padding: 12px;
-
             background: transparent;
-
             color: var(--brand-success);
-
-            border:
-                1px solid
-                var(--brand-success);
-
+            border: 1px solid var(--brand-success);
             border-radius: 6px;
-
             font-weight: 700;
-
             cursor: pointer;
-
             margin-top: 18px;
         }
 
         .new-registration-btn:hover {
-            background:
-                rgba(16, 185, 129, 0.08);
+            background: rgba(16, 185, 129, 0.08);
         }
 
         .security-note {
             margin-top: 25px;
-
             color: #696974;
-
             font-size: 0.72rem;
-
             text-align: center;
-
             line-height: 1.5;
         }
 
         @media (max-width: 650px) {
-
             body {
                 padding: 20px 12px;
             }
@@ -758,1279 +511,357 @@
 <body>
 
 <div class="registration-card">
-
     <div class="glowing-logo-bg"></div>
 
-    <!-- ==============================
-         ORGANIZATION HEADER
-    =============================== -->
-
     <header class="org-header">
-
         <div class="header-logo-container">
-
-            <img
-                src="../logo.png"
-                alt="United GUARDIANS Wing Worldwide Inc. Logo"
-                onerror="this.style.display='none';"
-            >
-
+            <img src="../logo.png" alt="United GUARDIANS Wing Worldwide Inc. Logo" onerror="this.style.display='none';">
         </div>
-
-        <h1>
-            United GUARDIANS Wing Worldwide Inc.
-        </h1>
-
-        <p class="sec-number">
-            SEC REG. NO. 2024120180352-00
-        </p>
-
-        <p class="subtitle">
-            Secure Operational Network Intake Form Matrix
-        </p>
-
+        <h1>United GUARDIANS Wing Worldwide Inc.</h1>
+        <p class="sec-number">SEC REG. NO. 2024120180352-00</p>
+        <p class="subtitle">Secure Operational Network Intake Form Matrix</p>
     </header>
 
-
-    <!-- ==============================
-         REGISTRATION FORM
-    =============================== -->
-
-    <form
-        id="registration-form"
-        autocomplete="off"
-        novalidate
-    >
-
+    <form id="registration-form" autocomplete="off" novalidate>
         <div class="form-grid">
 
-            <!-- WING SELECTION -->
-
             <div class="field-group full-width">
-
-                <label for="reg-municipality">
-
-                    Official Wing / Chapter
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <select
-                    id="reg-municipality"
-                    name="municipality"
-                    required
-                >
-
-                    <option
-                        value=""
-                        selected
-                        disabled
-                    >
-                        -- Select Your Wing --
-                    </option>
-
-                    <option value="Impasugong Wing">
-                        Impasugong Wing
-                    </option>
-
-                    <option value="Sumilao Wing">
-                        Sumilao Wing
-                    </option>
-
-                    <option value="Manolo Fortich Wing">
-                        Manolo Fortich Wing
-                    </option>
-
-                    <option value="Malitbog Wing">
-                        Malitbog Wing
-                    </option>
-
-                    <option value="Jasaan Wing">
-                        Jasaan Wing
-                    </option>
-
-                    <option value="Villanueva Wing">
-                        Villanueva Wing
-                    </option>
-
-                    <option value="Tagoloan Wing">
-                        Tagoloan Wing
-                    </option>
-
-                    <option value="Balingasag Wing">
-                        Balingasag Wing
-                    </option>
-
-                    <option value="Lagonglong Wing">
-                        Lagonglong Wing
-                    </option>
-
+                <label for="reg-municipality">Official Wing / Chapter <span class="req-star">*</span></label>
+                <select id="reg-municipality" name="municipality" required>
+                    <option value="" selected disabled>-- Select Your Wing --</option>
+                    <option value="Impasugong Wing">Impasugong Wing</option>
+                    <option value="Sumilao Wing">Sumilao Wing</option>
+                    <option value="Manolo Fortich Wing">Manolo Fortich Wing</option>
+                    <option value="Malitbog Wing">Malitbog Wing</option>
+                    <option value="Jasaan Wing">Jasaan Wing</option>
+                    <option value="Villanueva Wing">Villanueva Wing</option>
+                    <option value="Tagoloan Wing">Tagoloan Wing</option>
+                    <option value="Balingasag Wing">Balingasag Wing</option>
+                    <option value="Lagonglong Wing">Lagonglong Wing</option>
                 </select>
-
-                <small class="helper-text">
-                    Select the official Wing where this registration belongs.
-                </small>
-
+                <small class="helper-text">Select the official Wing where this registration belongs.</small>
             </div>
 
-
-            <!-- PRIMARY DETAILS -->
-
-            <div class="section-divider">
-                Registrant Primary Details
-            </div>
-
+            <div class="section-divider">Registrant Primary Details</div>
 
             <div class="field-group">
-
-                <label for="reg-fname">
-
-                    First Name
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <input
-                    type="text"
-                    id="reg-fname"
-                    name="firstName"
-                    placeholder="Given name"
-                    maxlength="60"
-                    required
-                >
-
+                <label for="reg-fname">First Name <span class="req-star">*</span></label>
+                <input type="text" id="reg-fname" name="firstName" placeholder="Given name" maxlength="60" required>
             </div>
-
 
             <div class="field-group">
-
-                <label for="reg-mname">
-                    Middle Name
-                </label>
-
-                <input
-                    type="text"
-                    id="reg-mname"
-                    name="middleName"
-                    placeholder="Middle name / initial"
-                    maxlength="60"
-                >
-
+                <label for="reg-mname">Middle Name</label>
+                <input type="text" id="reg-mname" name="middleName" placeholder="Middle name / initial" maxlength="60">
             </div>
-
 
             <div class="field-group full-width">
-
-                <label for="reg-sname">
-
-                    Surname / Last Name
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <input
-                    type="text"
-                    id="reg-sname"
-                    name="surname"
-                    placeholder="Family surname"
-                    maxlength="60"
-                    required
-                >
-
+                <label for="reg-sname">Surname / Last Name <span class="req-star">*</span></label>
+                <input type="text" id="reg-sname" name="surname" placeholder="Family surname" maxlength="60" required>
             </div>
 
-
             <div class="field-group">
-
-                <label for="reg-alias">
-
-                    Pseudonym / Alias / Call Sign
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <input
-                    type="text"
-                    id="reg-alias"
-                    name="alias"
-                    placeholder="Organizational alias"
-                    maxlength="50"
-                    required
-                >
-
+                <label for="reg-alias">Pseudonym / Alias / Call Sign <span class="req-star">*</span></label>
+                <input type="text" id="reg-alias" name="alias" placeholder="Organizational alias" maxlength="50" required>
             </div>
 
-
             <div class="field-group">
-
-                <label for="reg-rank">
-
-                    Rank / Position
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <select
-                    id="reg-rank"
-                    name="rank"
-                    required
-                >
-
-                    <option
-                        value=""
-                        disabled
-                        selected
-                    >
-                        -- Select Current Rank --
-                    </option>
-
-                    <option value="Founder">
-                        Founder
-                    </option>
-
-                    <option value="National President">
-                        National President
-                    </option>
-
-                    <option value="Regional Director">
-                        Regional Director
-                    </option>
-
-                    <option value="Province Officer">
-                        Province Officer
-                    </option>
-
-                    <option value="Chapter President">
-                        Chapter President
-                    </option>
-
-                    <option value="Guardian Member">
-                        Guardian Member
-                    </option>
-
-                    <option value="Prospect / Applicant">
-                        Prospect / Applicant
-                    </option>
-
-                    <option value="Other">
-                        Other
-                    </option>
-
+                <label for="reg-rank">Rank / Position <span class="req-star">*</span></label>
+                <select id="reg-rank" name="rank" required>
+                    <option value="" disabled selected>-- Select Current Rank --</option>
+                    <option value="Founder">Founder</option>
+                    <option value="National President">National President</option>
+                    <option value="Regional Director">Regional Director</option>
+                    <option value="Province Officer">Province Officer</option>
+                    <option value="Chapter President">Chapter President</option>
+                    <option value="Guardian Member">Guardian Member</option>
+                    <option value="Prospect / Applicant">Prospect / Applicant</option>
+                    <option value="Other">Other</option>
                 </select>
-
             </div>
-
 
             <div class="field-group full-width">
-
-                <label for="reg-wing">
-
-                    Official Chapter / Wing Name Affiliation
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <input
-                    type="text"
-                    id="reg-wing"
-                    name="chapter"
-                    placeholder="Example: Bukidnon Provincial Chapter"
-                    maxlength="100"
-                    required
-                >
-
+                <label for="reg-wing">Official Chapter / Wing Name Affiliation <span class="req-star">*</span></label>
+                <input type="text" id="reg-wing" name="chapter" placeholder="Example: Bukidnon Provincial Chapter" maxlength="100" required>
             </div>
 
-
-            <!-- PERSONAL INFORMATION -->
-
-            <div class="section-divider">
-                Personal Information
-            </div>
-
+            <div class="section-divider">Personal Information</div>
 
             <div class="field-group">
-
-                <label for="reg-dob">
-
-                    Date of Birth
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <input
-                    type="date"
-                    id="reg-dob"
-                    name="dateOfBirth"
-                    required
-                >
-
+                <label for="reg-dob">Date of Birth <span class="req-star">*</span></label>
+                <input type="date" id="reg-dob" name="dateOfBirth" required>
             </div>
 
-
             <div class="field-group">
-
-                <label for="reg-age">
-                    Calculated Age
-                </label>
-
-                <input
-                    type="number"
-                    id="reg-age"
-                    name="age"
-                    placeholder="Auto-calculated"
-                    readonly
-                >
-
+                <label for="reg-age">Calculated Age</label>
+                <input type="number" id="reg-age" name="age" placeholder="Auto-calculated" readonly>
             </div>
 
-
             <div class="field-group">
-
-                <label for="reg-status">
-
-                    Civil Status
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <select
-                    id="reg-status"
-                    name="civilStatus"
-                    required
-                >
-
-                    <option
-                        value=""
-                        disabled
-                        selected
-                    >
-                        -- Select Status --
-                    </option>
-
-                    <option value="Single">
-                        Single
-                    </option>
-
-                    <option value="Married">
-                        Married
-                    </option>
-
-                    <option value="Widowed">
-                        Widowed
-                    </option>
-
-                    <option value="Separated">
-                        Separated
-                    </option>
-
-                    <option value="Prefer not to say">
-                        Prefer not to say
-                    </option>
-
+                <label for="reg-status">Civil Status <span class="req-star">*</span></label>
+                <select id="reg-status" name="civilStatus" required>
+                    <option value="" disabled selected>-- Select Status --</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
                 </select>
-
             </div>
 
-
             <div class="field-group">
-
-                <label for="reg-gender">
-                    Gender
-                </label>
-
-                <select
-                    id="reg-gender"
-                    name="gender"
-                >
-
-                    <option value="">
-                        -- Optional --
-                    </option>
-
-                    <option value="Male">
-                        Male
-                    </option>
-
-                    <option value="Female">
-                        Female
-                    </option>
-
-                    <option value="Prefer not to say">
-                        Prefer not to say
-                    </option>
-
+                <label for="reg-gender">Gender</label>
+                <select id="reg-gender" name="gender">
+                    <option value="">-- Optional --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
                 </select>
-
             </div>
 
-
-            <!-- CONTACT INFORMATION -->
-
-            <div class="section-divider">
-                Contact Information
-            </div>
-
+            <div class="section-divider">Contact Information</div>
 
             <div class="field-group">
-
-                <label for="reg-phone">
-
-                    Mobile Number
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <input
-                    type="tel"
-                    id="reg-phone"
-                    name="phone"
-                    placeholder="09XXXXXXXXX"
-                    maxlength="15"
-                    inputmode="tel"
-                    required
-                >
-
+                <label for="reg-phone">Mobile Number <span class="req-star">*</span></label>
+                <input type="tel" id="reg-phone" name="phone" placeholder="09XXXXXXXXX" maxlength="15" inputmode="tel" required>
             </div>
-
 
             <div class="field-group">
-
-                <label for="reg-email">
-                    Email Address
-                </label>
-
-                <input
-                    type="email"
-                    id="reg-email"
-                    name="email"
-                    placeholder="example@email.com"
-                    maxlength="120"
-                >
-
+                <label for="reg-email">Email Address</label>
+                <input type="email" id="reg-email" name="email" placeholder="example@email.com" maxlength="120">
             </div>
-
 
             <div class="field-group full-width">
-
-                <label for="reg-address">
-
-                    Complete Residential Address
-
-                    <span class="req-star">*</span>
-
-                </label>
-
-                <textarea
-                    id="reg-address"
-                    name="address"
-                    placeholder="House / Street / Barangay / Municipality / Province"
-                    maxlength="300"
-                    required
-                ></textarea>
-
+                <label for="reg-address">Complete Residential Address <span class="req-star">*</span></label>
+                <textarea id="reg-address" name="address" placeholder="House / Street / Barangay / Municipality / Province" maxlength="300" required></textarea>
             </div>
 
-
-            <!-- IDENTIFICATION PHOTO -->
-
-            <div class="section-divider">
-                Identification Photo
-            </div>
-
+            <div class="section-divider">Emergency Contact Information</div>
 
             <div class="field-group full-width">
+                <label for="emergencyName">Contact Person Full Name <span class="req-star">*</span></label>
+                <input type="text" id="emergencyName" name="emergencyName" placeholder="Full name of emergency contact" required>
+            </div>
 
+            <div class="field-group">
+                <label for="emergencyRelationship">Relationship <span class="req-star">*</span></label>
+                <input type="text" id="emergencyRelationship" name="emergencyRelationship" placeholder="e.g. Spouse, Parent, Sibling" required>
+            </div>
+
+            <div class="field-group">
+                <label for="emergencyPhone">Emergency Contact Number <span class="req-star">*</span></label>
+                <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="09XXXXXXXXX" inputmode="tel" required>
+            </div>
+
+            <div class="section-divider">Identification Photo</div>
+
+            <div class="field-group full-width">
                 <div class="photo-upload-box">
+                    <label for="reg-photo">2×2 ID Picture (Optional)</label>
+                    <input type="file" id="reg-photo" name="photo" accept="image/png,image/jpeg,image/jpg,image/webp">
+                    <small class="helper-text">Optional. Upload a recent 2×2 ID picture. JPG, JPEG, PNG, or WEBP only. Maximum 5 MB.</small>
 
-                    <label for="reg-photo">
-                        2×2 ID Picture (Optional)
-                    </label>
-
-                    <input
-                        type="file"
-                        id="reg-photo"
-                        name="photo"
-                        accept="image/png,image/jpeg,image/jpg,image/webp"
-                    >
-
-                    <small class="helper-text">
-                        Optional. Upload a recent 2×2 ID picture.
-                        JPG, JPEG, PNG, or WEBP only. Maximum 5 MB.
-                    </small>
-
-
-                   
-                    
-                            <!-- Emergency Contact Information Section -->
-        <div class="form-group-section" style="margin-bottom: 20px;">
-          <h3>Emergency Contact Information</h3>
-          
-          <div class="form-group" style="margin-bottom: 15px;">
-            <label for="emergencyName">Contact Person Full Name</label>
-            <input type="text" id="emergencyName" name="emergencyName" required style="width: 100%; padding: 8px;">
-          </div>
-
-          <div class="form-group" style="margin-bottom: 15px;">
-            <label for="emergencyRelationship">Relationship</label>
-            <input type="text" id="emergencyRelationship" name="emergencyRelationship" required style="width: 100%; padding: 8px;">
-          </div>
-
-          <div class="form-group" style="margin-bottom: 15px;">
-            <label for="emergencyPhone">Emergency Contact Number</label>
-            <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="+639XXXXXXXXX" required style="width: 100%; padding: 8px;">
-          </div>
-        </div>
-<div
-                        id="photo-preview-container"
-                        class="photo-preview-container"
-                    >
-
-                        <img
-                            id="photo-preview"
-                            class="photo-preview"
-                            alt="2x2 photo preview"
-                        >
-
-                        <div class="photo-preview-label">
-                            Photo Preview
-                        </div>
-
+                    <div id="photo-preview-container" class="photo-preview-container">
+                        <img id="photo-preview" class="photo-preview" alt="2x2 photo preview">
+                        <div class="photo-preview-label">Photo Preview</div>
                     </div>
-
                 </div>
-
             </div>
 
-
-            <!-- ADDITIONAL INFORMATION -->
-
-            <div class="section-divider">
-                Additional Information
-            </div>
-
+            <div class="section-divider">Additional Information</div>
 
             <div class="field-group full-width">
-
-                <label for="reg-notes">
-                    Additional Notes
-                </label>
-
-                <textarea
-                    id="reg-notes"
-                    name="notes"
-                    placeholder="Optional notes or additional organizational information"
-                    maxlength="500"
-                ></textarea>
-
+                <label for="reg-notes">Additional Notes</label>
+                <textarea id="reg-notes" name="notes" placeholder="Optional notes or additional organizational information" maxlength="500"></textarea>
             </div>
-
-
-            <!-- PRIVACY -->
 
             <div class="privacy-box">
-
                 <div class="privacy-row">
-
-                    <input
-                        type="checkbox"
-                        id="privacy-consent"
-                        required
-                    >
-
+                    <input type="checkbox" id="privacy-consent" required>
                     <label for="privacy-consent">
-
-                        <span class="privacy-title">
-                            Data Privacy Consent:
-                        </span>
-
-                        I confirm that the information provided is accurate
-                        and voluntarily submitted for legitimate
-                        organizational registration, verification, record
-                        management, and authorized internal administrative
-                        purposes. I understand that access to this
-                        information should be restricted to authorized
-                        personnel.
-
+                        <span class="privacy-title">Data Privacy Consent:</span>
+                        I confirm that the information provided is accurate and voluntarily submitted for legitimate organizational registration, verification, record management, and authorized internal administrative purposes. I understand that access to this information should be restricted to authorized personnel.
                         <span class="req-star">*</span>
-
                     </label>
-
                 </div>
-
             </div>
 
         </div>
 
-
-        <button
-            type="submit"
-            class="submit-btn"
-            id="submit-btn"
-        >
-            Submit Official Registration
-        </button>
-
-
-        <div
-            id="form-message"
-            class="form-message"
-            role="alert"
-            aria-live="polite"
-        ></div>
-
+        <button type="submit" class="submit-btn" id="submit-btn">Submit Official Registration</button>
+        <div id="form-message" class="form-message" role="alert" aria-live="polite"></div>
     </form>
 
+    <section id="database-trace" class="database-trace" aria-live="polite">
+        <div class="success-title">✓ REGISTRATION RECORDED</div>
+        <div class="success-subtitle">Official Network Registration Receipt</div>
+        <div class="screenshot-notice">📸 You may screenshot this receipt for your reference.</div>
 
-    <!-- ==============================
-         SUCCESS RECEIPT
-    =============================== -->
-
-    <section
-        id="database-trace"
-        class="database-trace"
-        aria-live="polite"
-    >
-
-        <div class="success-title">
-            ✓ REGISTRATION RECORDED
+        <div id="photo-receipt-container" class="photo-receipt-container">
+            <img id="photo-receipt" class="photo-receipt" alt="Registrant identification photo">
         </div>
-
-        <div class="success-subtitle">
-            Official Network Registration Receipt
-        </div>
-
-
-        <div class="screenshot-notice">
-            📸 You may screenshot this receipt for your reference.
-        </div>
-
-
-        <!-- OPTIONAL PHOTO ON RECEIPT -->
-
-        <div
-            id="photo-receipt-container"
-            class="photo-receipt-container"
-        >
-
-            <img
-                id="photo-receipt"
-                class="photo-receipt"
-                alt="Registrant identification photo"
-            >
-
-        </div>
-
 
         <div class="receipt-row">
-
-            <span class="receipt-label">
-                NAME
-            </span>
-
-            <span
-                id="receipt-name"
-                class="receipt-value"
-            >
-                —
-            </span>
-
+            <span class="receipt-label">NAME</span>
+            <span id="receipt-name" class="receipt-value">—</span>
         </div>
-
 
         <div class="receipt-row">
-
-            <span class="receipt-label">
-                ALIAS
-            </span>
-
-            <span
-                id="receipt-alias"
-                class="receipt-value"
-            >
-                —
-            </span>
-
+            <span class="receipt-label">ALIAS</span>
+            <span id="receipt-alias" class="receipt-value">—</span>
         </div>
-
 
         <div class="receipt-row">
-
-            <span class="receipt-label">
-                RANK
-            </span>
-
-            <span
-                id="receipt-rank"
-                class="receipt-value"
-            >
-                —
-            </span>
-
+            <span class="receipt-label">RANK</span>
+            <span id="receipt-rank" class="receipt-value">—</span>
         </div>
-
 
         <div class="receipt-row">
-
-            <span class="receipt-label">
-                CHAPTER
-            </span>
-
-            <span
-                id="receipt-chapter"
-                class="receipt-value"
-            >
-                —
-            </span>
-
+            <span class="receipt-label">CHAPTER</span>
+            <span id="receipt-chapter" class="receipt-value">—</span>
         </div>
-
 
         <div class="receipt-row">
-
-            <span class="receipt-label">
-                WING
-            </span>
-
-            <span
-                id="receipt-municipality"
-                class="receipt-value"
-            >
-                —
-            </span>
-
+            <span class="receipt-label">WING</span>
+            <span id="receipt-municipality" class="receipt-value">—</span>
         </div>
-
 
         <div class="receipt-row">
-
-            <span class="receipt-label">
-                SUBMITTED
-            </span>
-
-            <span
-                id="receipt-date"
-                class="receipt-value"
-            >
-                —
-            </span>
-
+            <span class="receipt-label">SUBMITTED</span>
+            <span id="receipt-date" class="receipt-value">—</span>
         </div>
 
-
-        <div class="reference-label">
-            Registration Reference Number
-        </div>
-
-
-        <div
-            id="reference-token"
-            class="reference-token"
-        >
-            —
-        </div>
-
+        <div class="reference-label">Registration Reference Number</div>
+        <div id="reference-token" class="reference-token">—</div>
 
         <div class="motto-banner">
-
             United GUARDIANS Wing Worldwide Inc.
-
-            <span class="flag-icon">
-                🇵🇭
-            </span>
-
+            <span class="flag-icon">🇵🇭</span>
         </div>
 
-
-        <button
-            type="button"
-            id="new-registration-btn"
-            class="new-registration-btn"
-        >
-            + Start New Registration
-        </button>
-
+        <button type="button" id="new-registration-btn" class="new-registration-btn">+ Start New Registration</button>
     </section>
 
-
     <div class="security-note">
-
-        Personal information submitted through this portal should only
-        be stored in a restricted-access system and accessed by
-        authorized organizational personnel.
-
+        Personal information submitted through this portal should only be stored in a restricted-access system and accessed by authorized organizational personnel.
     </div>
-
 </div>
 
-
 <script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbygFRlsoRYO27IU6M0o5TwWbLHWeeAB18aBs9KwvD0VmtcuOAANgRbyQyHgCjdBCJO5/exec";
 
-    /* =========================================================
-       GOOGLE APPS SCRIPT CONFIGURATION
+    const form = document.getElementById("registration-form");
+    const submitButton = document.getElementById("submit-btn");
+    const formMessage = document.getElementById("form-message");
+    const dobInput = document.getElementById("reg-dob");
+    const ageInput = document.getElementById("reg-age");
+    const receipt = document.getElementById("database-trace");
+    const newRegistrationButton = document.getElementById("new-registration-btn");
+    const photoInput = document.getElementById("reg-photo");
+    const photoPreviewContainer = document.getElementById("photo-preview-container");
+    const photoPreview = document.getElementById("photo-preview");
 
-       LEAVE BLANK FOR NOW.
-
-       After we create and deploy your Google Apps Script,
-       we will put the Web App URL here.
-
-       Example:
-
-       const APPS_SCRIPT_URL =
-       "https://script.google.com/macros/s/XXXXXXXX/exec";
-
-       ========================================================= */
-
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbygFRlsoRYO27IU6M0o5TwWbLHWeeAB18aBs9KwvD0VmtcuOAANgRbyQyHgCjdBCJO5/exec";
-
-
-    /* =========================================================
-       ELEMENTS
-       ========================================================= */
-
-    const form =
-        document.getElementById(
-            "registration-form"
-        );
-
-    const submitButton =
-        document.getElementById(
-            "submit-btn"
-        );
-
-    const formMessage =
-        document.getElementById(
-            "form-message"
-        );
-
-    const dobInput =
-        document.getElementById(
-            "reg-dob"
-        );
-
-    const ageInput =
-        document.getElementById(
-            "reg-age"
-        );
-
-    const receipt =
-        document.getElementById(
-            "database-trace"
-        );
-
-    const newRegistrationButton =
-        document.getElementById(
-            "new-registration-btn"
-        );
-
-    const photoInput =
-        document.getElementById(
-            "reg-photo"
-        );
-
-    const photoPreviewContainer =
-        document.getElementById(
-            "photo-preview-container"
-        );
-
-    const photoPreview =
-        document.getElementById(
-            "photo-preview"
-        );
-
-
-    /* =========================================================
-       DATE LIMIT
-       ========================================================= */
-
-    const today =
-        new Date();
-
-    dobInput.max =
-        today.toISOString()
-            .split("T")[0];
-
-
-    /* =========================================================
-       AGE CALCULATION
-       ========================================================= */
+    const today = new Date();
+    dobInput.max = today.toISOString().split("T")[0];
 
     function calculateAge(dateOfBirth) {
+        if (!dateOfBirth) return "";
+        const birthDate = new Date(dateOfBirth + "T00:00:00");
+        const currentDate = new Date();
+        let age = currentDate.getFullYear() - birthDate.getFullYear();
+        const monthDifference = currentDate.getMonth() - birthDate.getMonth();
 
-        if (!dateOfBirth) {
-            return "";
-        }
-
-        const birthDate =
-            new Date(
-                dateOfBirth + "T00:00:00"
-            );
-
-        const currentDate =
-            new Date();
-
-        let age =
-            currentDate.getFullYear()
-            -
-            birthDate.getFullYear();
-
-        const monthDifference =
-            currentDate.getMonth()
-            -
-            birthDate.getMonth();
-
-
-        if (
-            monthDifference < 0 ||
-            (
-                monthDifference === 0 &&
-                currentDate.getDate()
-                <
-                birthDate.getDate()
-            )
-        ) {
+        if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < birthDate.getDate())) {
             age--;
         }
 
-
-        if (
-            age < 0 ||
-            age > 120
-        ) {
-            return "";
-        }
-
-
+        if (age < 0 || age > 120) return "";
         return age;
     }
 
+    dobInput.addEventListener("change", function () {
+        ageInput.value = calculateAge(this.value);
+    });
 
-    dobInput.addEventListener(
-        "change",
-        function () {
+    photoInput.addEventListener("change", function () {
+        const file = this.files[0];
 
-            ageInput.value =
-                calculateAge(
-                    this.value
-                );
-
+        if (!file) {
+            photoPreviewContainer.style.display = "none";
+            photoPreview.src = "";
+            return;
         }
-    );
 
-
-    /* =========================================================
-       PHOTO VALIDATION + PREVIEW
-       ========================================================= */
-
-    photoInput.addEventListener(
-        "change",
-        function () {
-
-            const file =
-                this.files[0];
-
-
-            if (!file) {
-
-                photoPreviewContainer.style.display =
-                    "none";
-
-                photoPreview.src = "";
-
-                return;
-            }
-
-
-            const allowedTypes = [
-                "image/jpeg",
-                "image/png",
-                "image/webp"
-            ];
-
-
-            if (
-                !allowedTypes.includes(
-                    file.type
-                )
-            ) {
-
-                alert(
-                    "Please upload a JPG, JPEG, PNG, or WEBP image."
-                );
-
-                this.value = "";
-
-                photoPreviewContainer.style.display =
-                    "none";
-
-                return;
-            }
-
-
-            const maxSize =
-                5 * 1024 * 1024;
-
-
-            if (
-                file.size > maxSize
-            ) {
-
-                alert(
-                    "The photo must be 5 MB or smaller."
-                );
-
-                this.value = "";
-
-                photoPreviewContainer.style.display =
-                    "none";
-
-                return;
-            }
-
-
-            const reader =
-                new FileReader();
-
-
-            reader.onload =
-                function (event) {
-
-                    photoPreview.src =
-                        event.target.result;
-
-                    photoPreviewContainer.style.display =
-                        "block";
-
-                };
-
-
-            reader.readAsDataURL(
-                file
-            );
-
+        const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
+        if (!allowedTypes.includes(file.type)) {
+            alert("Please upload a JPG, JPEG, PNG, or WEBP image.");
+            this.value = "";
+            photoPreviewContainer.style.display = "none";
+            return;
         }
-    );
 
+        const maxSize = 5 * 1024 * 1024;
+        if (file.size > maxSize) {
+            alert("The photo must be 5 MB or smaller.");
+            this.value = "";
+            photoPreviewContainer.style.display = "none";
+            return;
+        }
 
-    /* =========================================================
-       CLEAN TEXT
-       ========================================================= */
+        const reader = new FileReader();
+        reader.onload = function (event) {
+            photoPreview.src = event.target.result;
+            photoPreviewContainer.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    });
 
     function cleanText(value) {
-
-        return String(
-            value || ""
-        )
-        .trim()
-        .replace(
-            /\s+/g,
-            " "
-        );
-
+        return String(value || "").trim().replace(/\s+/g, " ");
     }
-
-
-    /* =========================================================
-       REFERENCE NUMBER
-       ========================================================= */
 
     function generateReferenceNumber() {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        const randomNumber = Math.floor(100000 + Math.random() * 900000);
 
-        const date =
-            new Date();
-
-
-        const year =
-            date.getFullYear();
-
-
-        const month =
-            String(
-                date.getMonth() + 1
-            ).padStart(2, "0");
-
-
-        const day =
-            String(
-                date.getDate()
-            ).padStart(2, "0");
-
-
-        const randomNumber =
-            Math.floor(
-                100000 +
-                Math.random() * 900000
-            );
-
-
-        return (
-            "UGWWI-" +
-            year +
-            month +
-            day +
-            "-" +
-            randomNumber
-        );
+        return "UGWWI-" + year + month + day + "-" + randomNumber;
     }
 
-
-    /* =========================================================
-       FORM PAYLOAD
-       ========================================================= */
-
-async function getFormPayload() {
-        const firstName =
-            cleanText(
-                document.getElementById(
-                    "reg-fname"
-                ).value
-            );
-
-
-        const middleName =
-            cleanText(
-                document.getElementById(
-                    "reg-mname"
-                ).value
-            );
-
-
-        const surname =
-            cleanText(
-                document.getElementById(
-                    "reg-sname"
-                ).value
-            );
-
-
-        const fullName =
-            [
-                firstName,
-                middleName,
-                surname
-            ]
-            .filter(Boolean)
-            .join(" ");
-
+    function getFormPayload() {
+        const firstName = cleanText(document.getElementById("reg-fname").value);
+        const middleName = cleanText(document.getElementById("reg-mname").value);
+        const surname = cleanText(document.getElementById("reg-sname").value);
+        const fullName = [firstName, middleName, surname].filter(Boolean).join(" ");
 
         return {
-
-            municipality:
-                document.getElementById(
-                    "reg-municipality"
-                ).value,
-
-            firstName:
-                firstName,
-
-            middleName:
-                middleName,
-
-            surname:
-                surname,
-
-            fullName:
-                fullName,
-
-            alias:
-                cleanText(
-                    document.getElementById(
-                        "reg-alias"
-                    ).value
-                ),
-
-            rank:
-                document.getElementById(
-                    "reg-rank"
-                ).value,
-
-            chapter:
-                cleanText(
-                    document.getElementById(
-                        "reg-wing"
-                    ).value
-                ),
-
-            dateOfBirth:
-                document.getElementById(
-                    "reg-dob"
-                ).value,
-
-            age:
-                Number(
-                    document.getElementById(
-                        "reg-age"
-                    ).value
-                ),
-
-            civilStatus:
-                document.getElementById(
-                    "reg-status"
-                ).value,
-
-            gender:
-                document.getElementById(
-                    "reg-gender"
-                ).value,
-
-            phone:
-                cleanText(
-                    document.getElementById(
-                        "reg-phone"
-                    ).value
-                ),
-
-            email:
-                cleanText(
-                    document.getElementById(
-                        "reg-email"
-                    ).value
-                ),
-
-            address:
-                cleanText(
-                    document.getElementById(
-                        "reg-address"
-                    ).value
-                ),
-
-            notes:
-                cleanText(
-                    document.getElementById(
-                        "reg-notes"
-                    ).value
-                ),
-
-            privacyConsent:
-                true,
-
-            submittedAt:
-                new Date().toISOString(),
-
-            referenceNumber:
-                generateReferenceNumber()
-
+            municipality: document.getElementById("reg-municipality").value,
+            firstName: firstName,
+            middleName: middleName,
+            surname: surname,
+            fullName: fullName,
+            alias: cleanText(document.getElementById("reg-alias").value),
+            rank: document.getElementById("reg-rank").value,
+            chapter: cleanText(document.getElementById("reg-wing").value),
+            dateOfBirth: document.getElementById("reg-dob").value,
+            age: Number(document.getElementById("reg-age").value),
+            civilStatus: document.getElementById("reg-status").value,
+            gender: document.getElementById("reg-gender").value,
+            phone: cleanText(document.getElementById("reg-phone").value),
+            email: cleanText(document.getElementById("reg-email").value),
+            address: cleanText(document.getElementById("reg-address").value),
+            emergencyName: cleanText(document.getElementById("emergencyName").value),
+            emergencyRelationship: cleanText(document.getElementById("emergencyRelationship").value),
+            emergencyPhone: cleanText(document.getElementById("emergencyPhone").value),
+            notes: cleanText(document.getElementById("reg-notes").value),
+            privacyConsent: true,
+            submittedAt: new Date().toISOString(),
+            referenceNumber: generateReferenceNumber()
         };
     }
 
-
-    /* =========================================================
-       VALIDATION
-       ========================================================= */
-
-    function validateRegistration(
-        data
-    ) {
-
+    function validateRegistration(data) {
         if (
             !data.municipality ||
             !data.firstName ||
@@ -2039,486 +870,188 @@ async function getFormPayload() {
             !data.dateOfBirth ||
             !data.civilStatus ||
             !data.phone ||
-            !data.address
+            !data.address ||
+            !data.emergencyName ||
+            !data.emergencyRelationship ||
+            !data.emergencyPhone
         ) {
-
-            return (
-                "Please complete all required fields."
-            );
-
+            return "Please complete all required fields.";
         }
 
-
-        if (
-            !data.age ||
-            data.age < 1 ||
-            data.age > 120
-        ) {
-
-            return (
-                "Please enter a valid date of birth."
-            );
-
+        if (!data.age || data.age < 1 || data.age > 120) {
+            return "Please enter a valid date of birth.";
         }
 
-
-        const phonePattern =
-            /^[0-9+\-\s()]{7,20}$/;
-
-
-        if (
-            !phonePattern.test(
-                data.phone
-            )
-        ) {
-
-            return (
-                "Please enter a valid mobile number."
-            );
-
+        const phonePattern = /^[0-9+\-\s()]{7,20}$/;
+        if (!phonePattern.test(data.phone)) {
+            return "Please enter a valid mobile number.";
         }
 
+        if (!phonePattern.test(data.emergencyPhone)) {
+            return "Please enter a valid emergency contact number.";
+        }
 
         if (data.email) {
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-            if (
-                !emailPattern.test(
-                    data.email
-                )
-            ) {
-
-                return (
-                    "Please enter a valid email address."
-                );
-
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(data.email)) {
+                return "Please enter a valid email address.";
             }
-
         }
 
-
-        if (
-            !document
-                .getElementById(
-                    "privacy-consent"
-                )
-                .checked
-        ) {
-
-            return (
-                "Please agree to the Data Privacy Consent."
-            );
-
+        if (!document.getElementById("privacy-consent").checked) {
+            return "Please agree to the Data Privacy Consent.";
         }
-
 
         return null;
     }
 
-
-    /* =========================================================
-       MESSAGE
-       ========================================================= */
-
-    function showMessage(
-        message,
-        type = "error"
-    ) {
-
-        formMessage.textContent =
-            message;
-
-        formMessage.className =
-            "form-message " +
-            type;
-
+    function showMessage(message, type = "error") {
+        formMessage.textContent = message;
+        formMessage.className = "form-message " + type;
     }
-
 
     function clearMessage() {
-
-        formMessage.textContent =
-            "";
-
-        formMessage.className =
-            "form-message";
-
+        formMessage.textContent = "";
+        formMessage.className = "form-message";
     }
 
-
-    /* =========================================================
-       GOOGLE APPS SCRIPT SUBMISSION (SERVER-SIDE REF NUMBER)
-       ========================================================= */
-
-    async function submitToGoogleSheets(
-        data
-    ) {
-
-        /*
-         * DEMO MODE
-         *
-         * Until the Apps Script URL is supplied,
-         * the page simulates successful processing.
-         */
-
+    async function submitToGoogleSheets(data) {
         if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === "YOUR_APPS_SCRIPT_URL_HERE") {
-
-            await new Promise(
-                resolve =>
-                    setTimeout(
-                        resolve,
-                        700
-                    )
-            );
-
-            // Mocking a server-generated official reference number for testing
+            await new Promise(resolve => setTimeout(resolve, 700));
             return {
                 success: true,
                 demoMode: true,
                 referenceNumber: "REF-" + Math.floor(100000 + Math.random() * 900000)
             };
-
         }
 
-
-        /*
-         * LIVE MODE
-         */
-
-        const response =
-            await fetch(
-                APPS_SCRIPT_URL,
-                {
-                    method: "POST",
-                    mode: "cors",
-
-                    headers: {
-                        "Content-Type":
-                            "text/plain;charset=utf-8"
-                    },
-
-                    body:
-                        JSON.stringify(
-                            data
-                        )
-                }
-            );
-
+        const response = await fetch(APPS_SCRIPT_URL, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
 
         if (!response.ok) {
-
-            throw new Error(
-                "Server returned HTTP " +
-                response.status
-            );
-
+            throw new Error("Server returned HTTP " + response.status);
         }
 
-
-        const responseText =
-            await response.text();
-
+        const responseText = await response.text();
 
         try {
-
             const result = JSON.parse(responseText);
-            
-            // Return the full JSON parsed object which includes the server's official reference number
             return {
                 success: result.success || false,
                 referenceNumber: result.referenceNumber || null,
                 message: result.message || ""
             };
-
         } catch {
-
-            // Fallback error if the server didn't send clean JSON back
             throw new Error("Invalid server response format. Expected reference number from server.");
-
         }
-
     }
 
+    function showReceipt(data) {
+        document.getElementById("receipt-name").textContent = data.fullName;
+        document.getElementById("receipt-alias").textContent = data.alias;
+        document.getElementById("receipt-rank").textContent = data.rank;
+        document.getElementById("receipt-chapter").textContent = data.chapter;
+        document.getElementById("receipt-municipality").textContent = data.municipality;
 
-    /* =========================================================
-       SHOW RECEIPT
-       ========================================================= */
-
-    function showReceipt(
-        data
-    ) {
-
-        document.getElementById(
-            "receipt-name"
-        ).textContent =
-            data.fullName;
-
-
-        document.getElementById(
-            "receipt-alias"
-        ).textContent =
-            data.alias;
-
-
-        document.getElementById(
-            "receipt-rank"
-        ).textContent =
-            data.rank;
-
-
-        document.getElementById(
-            "receipt-chapter"
-        ).textContent =
-            data.chapter;
-
-
-        document.getElementById(
-            "receipt-municipality"
-        ).textContent =
-            data.municipality;
-
-
-        document.getElementById(
-            "receipt-date"
-        ).textContent =
-            new Date()
-                .toLocaleString(
-                    "en-PH",
-                    {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                        hour: "numeric",
-                        minute: "2-digit"
-                    }
-                );
-
-
-        document.getElementById(
-            "reference-token"
-        ).textContent =
-            data.referenceNumber;
-
-
-        /*
-         * Show uploaded photo on receipt
-         * if available.
-         */
-
-        if (
-            photoPreview.src
-        ) {
-
-            const receiptPhoto =
-                document.getElementById(
-                    "photo-receipt"
-                );
-
-            receiptPhoto.src =
-                photoPreview.src;
-
-            document.getElementById(
-                "photo-receipt-container"
-            ).style.display =
-                "block";
-
-        }
-
-
-        receipt.classList.add(
-            "visible"
-        );
-
-
-        form.style.display =
-            "none";
-
-
-        receipt.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+        document.getElementById("receipt-date").textContent = new Date().toLocaleString("en-PH", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit"
         });
 
+        document.getElementById("reference-token").textContent = data.referenceNumber;
+
+        if (photoPreview.src) {
+            const receiptPhoto = document.getElementById("photo-receipt");
+            receiptPhoto.src = photoPreview.src;
+            document.getElementById("photo-receipt-container").style.display = "block";
+        }
+
+        receipt.classList.add("visible");
+        form.style.display = "none";
+        receipt.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        clearMessage();
 
-    /* =========================================================
-       FORM SUBMISSION
-       ========================================================= */
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
 
-    form.addEventListener(
-        "submit",
-        async function (event) {
+        const data = getFormPayload();
 
-            event.preventDefault();
-
-            clearMessage();
-
-
-            if (
-                !form.checkValidity()
-            ) {
-
-                form.reportValidity();
-
-                return;
-
-            }
-
-
-            const data =
-                getFormPayload();
-    data.emergencyName = document.getElementById("emergencyName").value.trim();
-    data.emergencyRelationship = document.getElementById("emergencyRelationship").value.trim();
-    data.emergencyPhone = document.getElementById("emergencyPhone").value.trim();
-
-
-            const validationError =
-                validateRegistration(
-                    data
-                );
-
-
-            if (validationError) {
-
-                showMessage(
-                    validationError,
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            submitButton.disabled =
-                true;
-
-            submitButton.textContent =
-                "Processing Registration...";
-
-
-            try {
-
-                    // Extract base64 image data from preview if a photo was selected
-    if (photoInput.files && photoInput.files[0]) {
-      const previewSrc = photoPreview.src;
-      if (previewSrc && previewSrc.startsWith("data:")) {
-        const commaIndex = previewSrc.indexOf(",");
-        data.photo = {
-          base64: previewSrc.substring(commaIndex + 1),
-          contentType: previewSrc.substring(previewSrc.indexOf(":") + 1, previewSrc.indexOf(";"))
-        };
-                  } else {
+        if (photoInput.files && photoInput.files[0]) {
+            const previewSrc = photoPreview.src;
+            if (previewSrc && previewSrc.startsWith("data:")) {
+                const commaIndex = previewSrc.indexOf(",");
+                data.photo = {
+                    base64: previewSrc.substring(commaIndex + 1),
+                    contentType: previewSrc.substring(
+                        previewSrc.indexOf(":") + 1,
+                        previewSrc.indexOf(";")
+                    )
+                };
+            } else {
                 data.photo = null;
-            
+            }
         } else {
             data.photo = null;
         }
 
-    }
+        const validationError = validateRegistration(data);
 
-                const result =
-                    await submitToGoogleSheets(
-                        data
-                    );
+        if (validationError) {
+            showMessage(validationError, "error");
+            return;
+        }
 
+        submitButton.disabled = true;
+        submitButton.textContent = "Processing Registration...";
 
-                if (
-                    result &&
-                    result.success === false
-                ) {
+        try {
+            const result = await submitToGoogleSheets(data);
 
-                    throw new Error(
-                        result.message ||
-                        "Registration could not be completed."
-                    );
-
-                }
-
-
-                showReceipt(
-                    data
-                );
-
-
-            } catch (error) {
-
-                console.error(
-                    "Registration error:",
-                    error
-                );
-
-
-                showMessage(
-                    "Registration could not be submitted. Please verify your connection or contact the authorized administrator.",
-                    "error"
-                );
-
-
-            } finally {
-
-                submitButton.disabled =
-                    false;
-
-                submitButton.textContent =
-                    "Submit Official Registration";
-
+            if (result && result.success === false) {
+                throw new Error(result.message || "Registration could not be completed.");
             }
 
-        }
-    );
-
-
-    /* =========================================================
-       NEW REGISTRATION
-       ========================================================= */
-
-    newRegistrationButton.addEventListener(
-        "click",
-        function () {
-
-            form.reset();
-
-            ageInput.value =
-                "";
-
-            photoPreview.src =
-                "";
-
-            photoPreviewContainer.style.display =
-                "none";
-
-
-            document.getElementById(
-                "photo-receipt-container"
-            ).style.display =
-                "none";
-
-
-            clearMessage();
-
-
-            receipt.classList.remove(
-                "visible"
+            showReceipt(data);
+        } catch (error) {
+            console.error("Registration error:", error);
+            showMessage(
+                "Registration could not be submitted. Please verify your connection or contact the authorized administrator.",
+                "error"
             );
-
-
-            form.style.display =
-                "block";
-
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Official Registration";
         }
-    );
+    });
 
+    newRegistrationButton.addEventListener("click", function () {
+        form.reset();
+        ageInput.value = "";
+        photoPreview.src = "";
+        photoPreviewContainer.style.display = "none";
+        document.getElementById("photo-receipt-container").style.display = "none";
+
+        clearMessage();
+        receipt.classList.remove("visible");
+        form.style.display = "block";
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 </script>
 
 </body>
